@@ -7,11 +7,12 @@
 
 import re
 import string
+import pkgutil
 
-from src.pypdm.assist.env import *
-from src.pypdm.assist import log
-from src.pypdm.dbc._mysql import MysqlDBC
-from src.pypdm.dbc._sqlite import SqliteDBC
+from .assist.env import *
+from .assist import log
+from .dbc._mysql import MysqlDBC
+from .dbc._sqlite import SqliteDBC
 
 
 def help() :
@@ -68,11 +69,10 @@ def connect_to_db(host, port, username, password, dbtype, dbname, charset) :
 
 
 
-
 class PDM :
 
-    BEAN_TPL = '%s/src/pypdm/pkg_data/bean.tpl' % PRJ_DIR
-    DAO_TPL = '%s/src/pypdm/pkg_data/dao.tpl' % PRJ_DIR
+    BEAN_TPL = 'pkg_data/bean.tpl'
+    DAO_TPL = 'pkg_data/dao.tpl'
 
     def __init__(self, pdbc, pdm_pkg) :
         self.pdbc = pdbc
@@ -123,19 +123,18 @@ class PDM :
 
 
     def _to_beans(self, table_name, columns) :
-        with open(self.BEAN_TPL, 'r') as file:
-            tpl = DBTemplate(file.read())
-            variables = list(map(self.to_var, columns))
-            placeholders = {
-                '{table_name}': table_name,
-                '{TableName}': self.to_camel(table_name),
-                '{columns}': '\n'.join(list(map((lambda col: '\t%s = "%s"' % (col, col)), columns))),
-                '{variables}': '\n'.join(list(map((lambda col: '\t\tself.%s = None' % col), variables))),
-                '{params}': '\n'.join(list(('\t\t\tself.%s,' % col) for col in variables[1:])),
-                '{kvs}': '\n'.join(list(map(self.to_kv, columns)))
-            }
-            file_content = tpl.safe_substitute(placeholders).replace('\t', '    ')
-        return file_content
+        data = pkgutil.get_data(__package__, self.BEAN_TPL)
+        tpl = DBTemplate(data.decode(CHARSET))
+        variables = list(map(self.to_var, columns))
+        placeholders = {
+            '{table_name}': table_name,
+            '{TableName}': self.to_camel(table_name),
+            '{columns}': '\n'.join(list(map((lambda col: '\t%s = "%s"' % (col, col)), columns))),
+            '{variables}': '\n'.join(list(map((lambda col: '\t\tself.%s = None' % col), variables))),
+            '{params}': '\n'.join(list(('\t\t\tself.%s,' % col) for col in variables[1:])),
+            '{kvs}': '\n'.join(list(map(self.to_kv, columns)))
+        }
+        return tpl.safe_substitute(placeholders).replace('\t', '    ')
 
 
     def to_camel(self, underline) :
@@ -155,19 +154,18 @@ class PDM :
 
 
     def _to_daos(self, table_name, columns) :
-        with open(self.DAO_TPL, 'r') as file:
-            tpl = DBTemplate(file.read())
-            placeholders = {
-                '{pkg_path}': self.pdm_pkg,
-                '{table_name}': table_name,
-                '{TableName}': self.to_camel(table_name),
-                '{insert}': self.to_insert(table_name, columns),
-                '{update}': self.to_update(table_name, columns),
-                '{select}': self.to_select(table_name, columns),
-                '{set_values}': '\n'.join(('\t\t\tbean.%s = self._to_val(row, %i)' % (self.to_var(col), idx)) for idx, col in enumerate(columns))
-            }
-            file_content = tpl.safe_substitute(placeholders).replace('\t', '    ')
-        return file_content
+        data = pkgutil.get_data(__package__, self.DAO_TPL)
+        tpl = DBTemplate(data.decode(CHARSET))
+        placeholders = {
+            '{pkg_path}': self.pdm_pkg,
+            '{table_name}': table_name,
+            '{TableName}': self.to_camel(table_name),
+            '{insert}': self.to_insert(table_name, columns),
+            '{update}': self.to_update(table_name, columns),
+            '{select}': self.to_select(table_name, columns),
+            '{set_values}': '\n'.join(('\t\t\tbean.%s = self._to_val(row, %i)' % (self.to_var(col), idx)) for idx, col in enumerate(columns))
+        }
+        return tpl.safe_substitute(placeholders).replace('\t', '    ')
 
 
     def to_insert(self, table_name, columns) :

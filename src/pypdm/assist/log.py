@@ -10,7 +10,7 @@ import traceback
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
-from src.pypdm.assist.env import PRJ_DIR
+from .env import PRJ_DIR
 
 
 IS_INIT = False
