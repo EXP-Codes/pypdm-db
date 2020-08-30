@@ -5,7 +5,6 @@
 # @File   : pypdm.py
 # -----------------------------------------------
 
-import os
 import re
 import string
 
@@ -28,7 +27,7 @@ def build(
         dbtype = 'sqlite',
         dbname = 'test',
         charset = CHARSET,
-        pdm_pkg_path = 'src.',
+        pdm_pkg = 'src.pdm',
         table_whitelist = [],
         table_blacklist = []
     ) :
@@ -41,7 +40,7 @@ def build(
     :param dbtype:
     :param dbname:
     :param charset:
-    :param pdm_pkg_path:
+    :param pdm_pkg:
     :param table_whitelist:
     :param table_blacklist:
     :return:
@@ -51,7 +50,7 @@ def build(
 
     dbc = connect_to_db(host, port, username, password, dbtype, dbname, charset)
     if dbc :
-        pdm = PDM(dbc, pdm_pkg_path)
+        pdm = PDM(dbc, pdm_pkg)
         pdm.to_pdm(table_whitelist, table_blacklist)
 
 
@@ -73,14 +72,11 @@ class PDM :
     BEAN_TPL = '%s/tpls/bean.tpl' % PRJ_DIR
     DAO_TPL = '%s/tpls/dao.tpl' % PRJ_DIR
 
-    def __init__(self, pdbc, pdm_pkg_path) :
+    def __init__(self, pdbc, pdm_pkg) :
         self.pdbc = pdbc
-        self.pdm_pkg_path = pdm_pkg_path or 'src.'
-        self.pdm_pkg_path += '.' if not self.pdm_pkg_path.endswith('.') else ''
-        self.bean_pkg_path = pdm_pkg_path + 'bean'
-        self.dao_pkg_path = pdm_pkg_path + 'dao'
-        self.bean_dir_path = self.bean_pkg_path.replace('.', '/')
-        self.dao_dir_path = self.dao_pkg_path.replace('.', '/')
+        self.pdm_pkg = pdm_pkg
+        self.bean_pkg_path = '%s/%s/bean/' % (PRJ_DIR, pdm_pkg.replace('.', '/'))
+        self.dao_pkg_path = '%s/%s/dao/' % (PRJ_DIR, pdm_pkg.replace('.', '/'))
 
 
     def to_pdm(self, whitelist = [], blacklist = []) :
@@ -94,10 +90,10 @@ class PDM :
 
             columns = self.get_columns(conn, table_name)
             bean_file_content = self._to_beans(table_name, columns)
-            self.save(bean_file_content, self.bean_dir_path, table_name, '.py')
+            self.save(bean_file_content, self.bean_pkg_path, table_name, '.py')
 
             dao_file_content = self._to_daos(table_name, columns)
-            self.save(dao_file_content, self.dao_dir_path, table_name, '.py')
+            self.save(dao_file_content, self.dao_pkg_path, table_name, '.py')
 
         self.pdbc.close()
 
@@ -160,6 +156,7 @@ class PDM :
         with open(self.DAO_TPL, 'r') as file:
             tpl = DBTemplate(file.read())
             placeholders = {
+                '{pkg_path}': self.pdm_pkg,
                 '{table_name}': table_name,
                 '{TableName}': self.to_camel(table_name),
                 '{insert}': self.to_insert(table_name, columns),
@@ -190,8 +187,7 @@ class PDM :
     def save(self, content, filedir, filename, suffix) :
         if not os.path.exists(filedir) :
             os.makedirs(filedir)
-        path = '%s/%s%s' % (filedir, filename, suffix)
-        print(path)
+        path = '%s%s%s' % (filedir, filename, suffix)
         with open(path, 'w+') as file :
             file.write(content)
 
@@ -201,4 +197,5 @@ class PDM :
 class DBTemplate(string.Template) :
     delimiter = '@'
     idpattern = r'\{\w+\}'
+
 

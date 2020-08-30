@@ -6,6 +6,12 @@
 # -----------------------------------------------
 
 import os
-PRJ_DIR = os.path.dirname(os.path.abspath(__file__)).replace(r'/src/assist', '').replace(r'\src\assist', '')
+PRJ_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.dirname(
+            os.path.abspath(__file__)
+        )
+    )
+)
 
 CHARSET = 'utf-8'
