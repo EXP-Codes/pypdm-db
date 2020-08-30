@@ -7,7 +7,7 @@
 # Sqlite 数据库接口
 # -----------------------------------------------
 
-from src.utils import log
+from src.assist import log
 import sqlite3
 
 
