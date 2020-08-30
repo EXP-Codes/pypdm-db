@@ -4,8 +4,8 @@
 # DAO: @{table_name}
 # -------------------------------
 
-from @{pkg_path}.dao.@{table_name} import @{TableName}
-from pypdm.bean._base import BaseDao
+from @{pkg_path}.bean.@{table_name} import @{TableName}
+from pypdm.dao._base import BaseDao
 
 
 class @{TableName}Dao(BaseDao) :
