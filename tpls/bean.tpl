@@ -4,22 +4,22 @@
 # PDM: @{table_name}
 # -------------------------------
 
-class @{TableName}:
+class @{TableName} :
     table_name = "@{table_name}"
 @{columns}
 
 
-    def __init__(self):
+    def __init__(self) :
 @{variables}
 
 
-    def params(self):
+    def params(self) :
         return (
 @{params}
         )
 
 
-    def __repr__(self):
+    def __repr__(self) :
         return "\n".join(
             (
                 "%s: {" % self.table_name,

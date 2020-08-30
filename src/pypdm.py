@@ -29,7 +29,8 @@ def build(
         charset = CHARSET,
         pdm_pkg = 'src.pdm',
         table_whitelist = [],
-        table_blacklist = []
+        table_blacklist = [],
+        to_log = False
     ) :
     '''
     构造指定数据库的 PDM 对象文件
@@ -43,10 +44,11 @@ def build(
     :param pdm_pkg:
     :param table_whitelist:
     :param table_blacklist:
+    :param to_log:
     :return:
     '''
-    # whitelist = [ 't_cves' ]
-    # dbname = 'D:\\workspace\\Github\\threat-broadcast\\tpls\\sqlite.db'
+    if to_log :
+        log.init()
 
     dbc = connect_to_db(host, port, username, password, dbtype, dbname, charset)
     if dbc :

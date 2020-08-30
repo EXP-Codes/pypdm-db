@@ -5,13 +5,16 @@
 # @File   : log.py
 # -----------------------------------------------
 
+import os
 import traceback
 import logging
 from logging.handlers import TimedRotatingFileHandler
 from src.assist.env import PRJ_DIR
 
-RUN_LOG = '%s/log/run.log' % PRJ_DIR
-ERR_LOG = '%s/log/err.log' % PRJ_DIR
+IS_INIT = False
+LOG_DIR = '%s/log' % PRJ_DIR
+RUN_LOG = '%s/run.log' % LOG_DIR
+ERR_LOG = '%s/err.log' % LOG_DIR
 
 
 def init(runlog = RUN_LOG, errlog = ERR_LOG):
@@ -19,6 +22,8 @@ def init(runlog = RUN_LOG, errlog = ERR_LOG):
     初始化日志配置 （只需在程序入口调用一次）
     :return: None
     """
+    if not os.path.exists(LOG_DIR) :
+        os.mkdir(LOG_DIR)
 
     # 全局配置
     logger = logging.getLogger()
@@ -45,8 +50,8 @@ def init(runlog = RUN_LOG, errlog = ERR_LOG):
     exfh.setFormatter(formatter)
     logger.addHandler(exfh)
 
-    # 禁用第三方日志
-    # logging.getLogger("requests").setLevel(logging.FATAL)
+    global IS_INIT
+    IS_INIT = True
 
 
 
@@ -56,7 +61,7 @@ def debug(msg):
     :param msg: 日志信息
     :return: None
     """
-    logging.debug(msg)
+    logging.debug(msg) if IS_INIT else print(msg)
 
 
 def info(msg):
@@ -65,7 +70,7 @@ def info(msg):
     :param msg: 日志信息
     :return: None
     """
-    logging.info(msg)
+    logging.info(msg) if IS_INIT else print(msg)
 
 
 def warn(msg):
@@ -74,7 +79,7 @@ def warn(msg):
     :param msg: 日志信息
     :return: None
     """
-    logging.warning(msg)
+    logging.warning(msg) if IS_INIT else print(msg)
 
 
 def error(msg):
@@ -83,5 +88,8 @@ def error(msg):
     :param msg: 日志信息
     :return: None
     """
-    logging.exception(msg)
-    logging.exception(traceback.format_exc())
+    if IS_INIT :
+        logging.exception(msg)
+        logging.exception(traceback.format_exc())
+    else :
+        print(msg)

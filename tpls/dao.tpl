@@ -4,11 +4,11 @@
 # DAO: @{table_name}
 # -------------------------------
 
-from @{pkg_path}.@{table_name} import @{TableName}
+from @{pkg_path}.dao.@{table_name} import @{TableName}
 from pypdm.bean._base import BaseDao
 
 
-class @{TableName}Dao(BaseDao):
+class @{TableName}Dao(BaseDao) :
     TABLE_NAME = "@{table_name}"
     SQL_COUNT = "select count(1) from @{table_name}"
     SQL_TRUNCATE = "truncate table @{table_name}"
@@ -17,10 +17,10 @@ class @{TableName}Dao(BaseDao):
     SQL_UPDATE = "@{update}"
     SQL_SELECT = "@{select}"
 
-    def __init__(self):
+    def __init__(self) :
         BaseDao.__init__(self)
 
-    def _to_bean(self, row):
+    def _to_bean(self, row) :
         bean = None
         if row:
             bean = @{TableName}()
