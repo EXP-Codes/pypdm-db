@@ -126,7 +126,6 @@ class PDM :
     def _to_beans(self, table_name, columns) :
         with open(self.BEAN_TPL, 'r') as file:
             tpl = DBTemplate(file.read())
-
             variables = map(self.to_var, columns)
             placeholders = {
                 '{table_name}': table_name,
@@ -134,7 +133,7 @@ class PDM :
                 '{columns}': '\n'.join(map((lambda col: '\t%s = "%s"' % (col, col)), columns)),
                 '{variables}': '\n'.join(map((lambda col: '\t\tself.%s = None' % col), variables)),
                 '{params}': '\n'.join(('\t\t\tself.%s,' % col) for col in variables[1:]),
-                '{kvs}': '\n'.join(map(self.to_kv, columns))
+                '{kvs}': '\n'.join(list(map(self.to_kv, columns)))
             }
             file_content = tpl.safe_substitute(placeholders).replace('\t', '    ')
         return file_content

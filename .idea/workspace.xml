@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1949b09-79f1-451c-958b-045a43e53023" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbc/_mysql.py" afterPath="$PROJECT_DIR$/src/dbc/_mysql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbc/_sqlite.py" afterPath="$PROJECT_DIR$/src/dbc/_sqlite.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pypdm.py" afterPath="$PROJECT_DIR$/src/pypdm.py" />
     </list>
     <ignored path="pypdm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,7 +16,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build.coverage" NAME="Unittest TestSimple.test_build Coverage Results" MODIFIED="1598784698741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build.coverage" NAME="Unittest TestSimple.test_build Coverage Results" MODIFIED="1598784807249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build__1_.coverage" NAME="Unittest TestSimple.test_build (1) Coverage Results" MODIFIED="1598784772636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$pypdm.coverage" NAME="pypdm Coverage Results" MODIFIED="1598770987695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
@@ -36,15 +35,16 @@
       <file leaf-file-name="pypdm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pypdm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26898327" vertical-offset="0" max-vertical-offset="3933">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.45559844" vertical-offset="2287" max-vertical-offset="3914">
+              <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
               <folding>
-                <marker date="1598784321380" expanded="true" signature="2824:2848" placeholder="select * fro..missing_value..." />
-                <marker date="1598784321380" expanded="true" signature="3127:3151" placeholder="select * fro..missing_value..." />
-                <marker date="1598784321380" expanded="true" signature="4948:5015" placeholder="insert into ..." />
-                <marker date="1598784321380" expanded="true" signature="5219:5264" placeholder="select missi..missing_value..." />
-                <marker date="1598784321380" expanded="true" signature="5349:5416" placeholder="insert into ..." />
-                <marker date="1598784321380" expanded="true" signature="5676:5721" placeholder="select missi..missing_value..." />
+                <element signature="e#162#171#0" expanded="true" />
+                <marker date="1598784860274" expanded="true" signature="2824:2848" placeholder="select * fro..missing_value..." />
+                <marker date="1598784860274" expanded="true" signature="3127:3151" placeholder="select * fro..missing_value..." />
+                <marker date="1598784860274" expanded="true" signature="4953:5020" placeholder="insert into ..." />
+                <marker date="1598784860274" expanded="true" signature="5224:5269" placeholder="select missi..missing_value..." />
+                <marker date="1598784860274" expanded="true" signature="5354:5421" placeholder="insert into ..." />
+                <marker date="1598784860274" expanded="true" signature="5681:5726" placeholder="select missi..missing_value..." />
               </folding>
             </state>
           </provider>
@@ -66,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/tests/test_pypdm.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
               <folding>
                 <element signature="e#209#224#0" expanded="true" />
               </folding>
@@ -142,12 +142,12 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/env.py" />
         <option value="$PROJECT_DIR$/src/assist/env.py" />
-        <option value="$PROJECT_DIR$/src/pypdm.py" />
         <option value="$PROJECT_DIR$/tests/test_pypdm.py" />
         <option value="$PROJECT_DIR$/src/assist/log.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/src/dbc/_sqlite.py" />
         <option value="$PROJECT_DIR$/src/dbc/_mysql.py" />
+        <option value="$PROJECT_DIR$/src/pypdm.py" />
       </list>
     </option>
   </component>
@@ -343,7 +343,7 @@
       <recent name="D:\workspace\Github\pypdm\src\pbean" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestSimple.test_build (1)">
+  <component name="RunManager" selected="Python tests.Unittest TestSimple.test_build">
     <configuration default="false" name="pypdm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -609,8 +609,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (1)" />
         <item index="2" class="java.lang.String" itemvalue="Python.pypdm" />
       </list>
     </recent_temporary>
@@ -831,16 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_pypdm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#209#224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbc/_sqlite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2109">
@@ -861,17 +851,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_pypdm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding>
+            <element signature="e#209#224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pypdm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26898327" vertical-offset="0" max-vertical-offset="3933">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.45559844" vertical-offset="2287" max-vertical-offset="3914">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
-            <marker date="1598784321380" expanded="true" signature="2824:2848" placeholder="select * fro..missing_value..." />
-            <marker date="1598784321380" expanded="true" signature="3127:3151" placeholder="select * fro..missing_value..." />
-            <marker date="1598784321380" expanded="true" signature="4948:5015" placeholder="insert into ..." />
-            <marker date="1598784321380" expanded="true" signature="5219:5264" placeholder="select missi..missing_value..." />
-            <marker date="1598784321380" expanded="true" signature="5349:5416" placeholder="insert into ..." />
-            <marker date="1598784321380" expanded="true" signature="5676:5721" placeholder="select missi..missing_value..." />
+            <element signature="e#162#171#0" expanded="true" />
+            <marker date="1598784860274" expanded="true" signature="2824:2848" placeholder="select * fro..missing_value..." />
+            <marker date="1598784860274" expanded="true" signature="3127:3151" placeholder="select * fro..missing_value..." />
+            <marker date="1598784860274" expanded="true" signature="4953:5020" placeholder="insert into ..." />
+            <marker date="1598784860274" expanded="true" signature="5224:5269" placeholder="select missi..missing_value..." />
+            <marker date="1598784860274" expanded="true" signature="5354:5421" placeholder="insert into ..." />
+            <marker date="1598784860274" expanded="true" signature="5681:5726" placeholder="select missi..missing_value..." />
           </folding>
         </state>
       </provider>
