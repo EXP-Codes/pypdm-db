@@ -5,6 +5,7 @@
 # @File   : pypdm.py
 # -----------------------------------------------
 
+import os
 import re
 import string
 
@@ -70,7 +71,7 @@ def connect_to_db(host, port, username, password, dbtype, dbname, charset) :
 class PDM :
 
     BEAN_TPL = '%s/tpls/bean.tpl' % PRJ_DIR
-    DAO_TPL = '%s/tpl/dao.tpl' % PRJ_DIR
+    DAO_TPL = '%s/tpls/dao.tpl' % PRJ_DIR
 
     def __init__(self, pdbc, pdm_pkg_path) :
         self.pdbc = pdbc
@@ -152,7 +153,7 @@ class PDM :
 
 
     def to_kv(self, col) :
-        return '\t\t\t\t"\\t%s = %s" % (self.' + col + ', self.' + self.to_var(col) + '),'
+        return '\t\t\t\t"\t%s = %s" % (self.' + col + ', self.' + self.to_var(col) + '),'
 
 
     def _to_daos(self, table_name, columns) :
@@ -177,7 +178,7 @@ class PDM :
 
 
     def to_update(self, table_name, columns) :
-        cols = ', '.join(map((lambda col: col + ' = %s'), columns[1:]))
+        cols = ', '.join(list(map((lambda col: col + ' = %s'), columns[1:])))
         return 'update ' + table_name + ' set ' + cols + ' where 1 = 1 '
 
 
@@ -187,8 +188,11 @@ class PDM :
 
 
     def save(self, content, filedir, filename, suffix) :
+        if not os.path.exists(filedir) :
+            os.makedirs(filedir)
         path = '%s/%s%s' % (filedir, filename, suffix)
-        with open(path, 'w') as file :
+        print(path)
+        with open(path, 'w+') as file :
             file.write(content)
 
 
