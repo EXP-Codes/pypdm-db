@@ -6,7 +6,7 @@
 
 import pymysql as pdbc
 
-from src.utils import log as log
+from src.assist import log as log
 
 
 class MysqlDBC:
