@@ -132,7 +132,7 @@ class PDM :
                 '{TableName}': self.to_camel(table_name),
                 '{columns}': '\n'.join(list(map((lambda col: '\t%s = "%s"' % (col, col)), columns))),
                 '{variables}': '\n'.join(list(map((lambda col: '\t\tself.%s = None' % col), variables))),
-                '{params}': '\n'.join(('\t\t\tself.%s,' % col) for col in variables[1:]),
+                '{params}': '\n'.join(list(('\t\t\tself.%s,' % col) for col in variables[1:])),
                 '{kvs}': '\n'.join(list(map(self.to_kv, columns)))
             }
             file_content = tpl.safe_substitute(placeholders).replace('\t', '    ')
