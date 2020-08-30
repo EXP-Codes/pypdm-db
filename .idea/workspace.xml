@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a1949b09-79f1-451c-958b-045a43e53023" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pypdm.py" afterPath="$PROJECT_DIR$/src/pypdm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_pypdm.py" afterPath="$PROJECT_DIR$/tests/test_pypdm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pypdm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,10 +18,12 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build.coverage" NAME="Unittest TestSimple.test_build Coverage Results" MODIFIED="1598784881255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build.coverage" NAME="Unittest TestSimple.test_build Coverage Results" MODIFIED="1598785740900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build__3_.coverage" NAME="Unittest TestSimple.test_build (3) Coverage Results" MODIFIED="1598785854013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build__1_.coverage" NAME="Unittest TestSimple.test_build (1) Coverage Results" MODIFIED="1598784772636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$pypdm.coverage" NAME="pypdm Coverage Results" MODIFIED="1598770987695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build__2_.coverage" NAME="Unittest TestSimple.test_build (2) Coverage Results" MODIFIED="1598784934745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pypdm$test_pypdm.coverage" NAME="test_pypdm Coverage Results" MODIFIED="1598785557252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -36,16 +40,16 @@
       <file leaf-file-name="pypdm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pypdm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="2287" max-vertical-offset="3914">
-              <caret line="134" column="93" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
+            <state vertical-scroll-proportion="0.63320464" vertical-offset="3137" max-vertical-offset="3914">
+              <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
               <folding>
                 <element signature="e#162#171#0" expanded="true" />
-                <marker date="1598784945772" expanded="true" signature="2824:2848" placeholder="select * fro..missing_value..." />
-                <marker date="1598784945772" expanded="true" signature="3127:3151" placeholder="select * fro..missing_value..." />
-                <marker date="1598784945772" expanded="true" signature="4971:5038" placeholder="insert into ..." />
-                <marker date="1598784945772" expanded="true" signature="5242:5287" placeholder="select missi..missing_value..." />
-                <marker date="1598784945772" expanded="true" signature="5372:5439" placeholder="insert into ..." />
-                <marker date="1598784945772" expanded="true" signature="5699:5744" placeholder="select missi..missing_value..." />
+                <marker date="1598785862368" expanded="true" signature="2824:2848" placeholder="select * fro..missing_value..." />
+                <marker date="1598785862368" expanded="true" signature="3127:3151" placeholder="select * fro..missing_value..." />
+                <marker date="1598785862368" expanded="true" signature="4977:5044" placeholder="insert into ..." />
+                <marker date="1598785862368" expanded="true" signature="5248:5293" placeholder="select missi..missing_value..." />
+                <marker date="1598785862368" expanded="true" signature="5378:5445" placeholder="insert into ..." />
+                <marker date="1598785862368" expanded="true" signature="5705:5750" placeholder="select missi..missing_value..." />
               </folding>
             </state>
           </provider>
@@ -66,8 +70,8 @@
       <file leaf-file-name="test_pypdm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_pypdm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="e#209#224#0" expanded="true" />
               </folding>
@@ -143,11 +147,11 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/env.py" />
         <option value="$PROJECT_DIR$/src/assist/env.py" />
-        <option value="$PROJECT_DIR$/tests/test_pypdm.py" />
         <option value="$PROJECT_DIR$/src/assist/log.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/src/dbc/_sqlite.py" />
         <option value="$PROJECT_DIR$/src/dbc/_mysql.py" />
+        <option value="$PROJECT_DIR$/tests/test_pypdm.py" />
         <option value="$PROJECT_DIR$/src/pypdm.py" />
       </list>
     </option>
@@ -344,27 +348,7 @@
       <recent name="D:\workspace\Github\pypdm\src\pbean" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestSimple.test_build (2)">
-    <configuration default="false" name="pypdm" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pypdm" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/pypdm.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest TestSimple.test_build (3)">
     <configuration default="false" name="Unittest TestSimple.test_build" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -416,6 +400,51 @@
       <method />
     </configuration>
     <configuration default="false" name="Unittest TestSimple.test_build (2)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pypdm" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_pypdm.py" />
+      <option name="CLASS_NAME" value="TestSimple" />
+      <option name="METHOD_NAME" value="test_build" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_pypdm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pypdm" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_pypdm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestSimple.test_build (3)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -628,18 +657,20 @@
       <envs />
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Python.pypdm" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (2)" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (2)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test_pypdm" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (3)" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (2)" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (3)" />
         <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.pypdm" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test_pypdm" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (2)" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_build (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -881,8 +912,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_pypdm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#209#224#0" expanded="true" />
           </folding>
@@ -891,16 +922,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pypdm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="2287" max-vertical-offset="3914">
-          <caret line="134" column="93" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
+        <state vertical-scroll-proportion="0.63320464" vertical-offset="3137" max-vertical-offset="3914">
+          <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
           <folding>
             <element signature="e#162#171#0" expanded="true" />
-            <marker date="1598784945772" expanded="true" signature="2824:2848" placeholder="select * fro..missing_value..." />
-            <marker date="1598784945772" expanded="true" signature="3127:3151" placeholder="select * fro..missing_value..." />
-            <marker date="1598784945772" expanded="true" signature="4971:5038" placeholder="insert into ..." />
-            <marker date="1598784945772" expanded="true" signature="5242:5287" placeholder="select missi..missing_value..." />
-            <marker date="1598784945772" expanded="true" signature="5372:5439" placeholder="insert into ..." />
-            <marker date="1598784945772" expanded="true" signature="5699:5744" placeholder="select missi..missing_value..." />
+            <marker date="1598785862368" expanded="true" signature="2824:2848" placeholder="select * fro..missing_value..." />
+            <marker date="1598785862368" expanded="true" signature="3127:3151" placeholder="select * fro..missing_value..." />
+            <marker date="1598785862368" expanded="true" signature="4977:5044" placeholder="insert into ..." />
+            <marker date="1598785862368" expanded="true" signature="5248:5293" placeholder="select missi..missing_value..." />
+            <marker date="1598785862368" expanded="true" signature="5378:5445" placeholder="insert into ..." />
+            <marker date="1598785862368" expanded="true" signature="5705:5750" placeholder="select missi..missing_value..." />
           </folding>
         </state>
       </provider>

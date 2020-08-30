@@ -126,7 +126,7 @@ class PDM :
     def _to_beans(self, table_name, columns) :
         with open(self.BEAN_TPL, 'r') as file:
             tpl = DBTemplate(file.read())
-            variables = map(self.to_var, columns)
+            variables = list(map(self.to_var, columns))
             placeholders = {
                 '{table_name}': table_name,
                 '{TableName}': self.to_camel(table_name),
