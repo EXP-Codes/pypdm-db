@@ -4,15 +4,24 @@
 
 import unittest
 
-from src.pypdm import *
+from src import pypdm
 
 
 class TestSimple(unittest.TestCase):
 
-    def test_build(self):
-        whitelist = [ 't_cves' ]
-        dbname = 'D:\\workspace\\Github\\threat-broadcast\\tpls\\cves.db'
-        # self.assertEqual(build(5), 6)
+    def setUp(self) :
+        pass
+
+    def tearDown(self) :
+        pass
+
+    def test_build(self) :
+        rst = pypdm.build(
+            dbtype = 'sqlite',
+            dbname = 'data/sqlite.db',
+            table_whitelist = [ 't_cves' ]
+        )
+        self.assertEqual(rst, True)
 
 
 if __name__ == '__main__':

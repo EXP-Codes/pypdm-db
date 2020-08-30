@@ -161,7 +161,7 @@ setup(
     # If there are tpls files included in your packages that need to be
     # installed, specify them here.
     package_data={
-        # 'pypdm': ['package_data.dat'],
+        'test_data': ['tests/data/sqlite.db'],
     },  # Optional
 
     # Although 'package_data' is the preferred approach, in some case you may

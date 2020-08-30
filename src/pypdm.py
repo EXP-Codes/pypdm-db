@@ -46,7 +46,7 @@ def build(
     :return:
     '''
     # whitelist = [ 't_cves' ]
-    # dbname = 'D:\\workspace\\Github\\threat-broadcast\\tpls\\cves.db'
+    # dbname = 'D:\\workspace\\Github\\threat-broadcast\\tpls\\sqlite.db'
 
     dbc = connect_to_db(host, port, username, password, dbtype, dbname, charset)
     if dbc :
