@@ -130,8 +130,8 @@ class PDM :
             placeholders = {
                 '{table_name}': table_name,
                 '{TableName}': self.to_camel(table_name),
-                '{columns}': '\n'.join(map((lambda col: '\t%s = "%s"' % (col, col)), columns)),
-                '{variables}': '\n'.join(map((lambda col: '\t\tself.%s = None' % col), variables)),
+                '{columns}': '\n'.join(list(map((lambda col: '\t%s = "%s"' % (col, col)), columns))),
+                '{variables}': '\n'.join(list(map((lambda col: '\t\tself.%s = None' % col), variables))),
                 '{params}': '\n'.join(('\t\t\tself.%s,' % col) for col in variables[1:]),
                 '{kvs}': '\n'.join(list(map(self.to_kv, columns)))
             }
