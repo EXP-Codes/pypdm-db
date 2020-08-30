@@ -195,8 +195,8 @@ setup(
     # what's used to render the link text on PyPI.
     project_urls={  # Optional
         'Bug Reports': 'https://github.com/lyy289065406/pypdm/issues',
-        'Funding': 'https://donate.pypi.org',
-        'Say Thanks!': 'http://saythanks.io/to/example',
+        'Funding': 'https://github.com/lyy289065406/pypdm/blob/master/imgs/donate-alipay.png',
+        'Say Thanks!': 'https://github.com/lyy289065406/pypdm/blob/master/imgs/donate-wechat.png',
         'Source': 'https://github.com/lyy289065406/pypdm/',
     },
 )
