@@ -8,7 +8,8 @@
 # -------------------------------
 
 import pymysql as pdbc
-from src.assist import log
+
+from src.pypdm.assist import log
 
 
 class MysqlDBC :

@@ -4,7 +4,7 @@
 # 数据访问对象：基类
 # -------------------------------
 
-from src.assist import log
+from src.pypdm.assist import log
 
 
 class BaseDao:

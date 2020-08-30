@@ -8,7 +8,8 @@
 # -----------------------------------------------
 
 import sqlite3
-from src.assist import log
+
+from src.pypdm.assist import log
 
 
 class SqliteDBC :

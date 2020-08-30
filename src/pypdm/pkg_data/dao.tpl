@@ -5,7 +5,7 @@
 # -------------------------------
 
 from @{pkg_path}.bean.@{table_name} import @{TableName}
-from pypdm.dao._base import BaseDao
+from pypdm.pypdm.dao._base import BaseDao
 
 
 class @{TableName}Dao(BaseDao) :

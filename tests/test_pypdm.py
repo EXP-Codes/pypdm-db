@@ -4,7 +4,7 @@
 
 import unittest
 
-from src import pypdm
+from src.pypdm import builder
 
 
 class TestSimple(unittest.TestCase):
@@ -16,7 +16,7 @@ class TestSimple(unittest.TestCase):
         pass
 
     def test_build(self) :
-        rst = pypdm.build(
+        rst = builder.build(
             dbtype = 'sqlite',
             dbname = 'data/sqlite.db',
             table_whitelist = [ 't_cves' ]

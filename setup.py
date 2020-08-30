@@ -161,7 +161,7 @@ setup(
     # If there are tpls files included in your packages that need to be
     # installed, specify them here.
     package_data={
-        'test_data': ['tests/data/sqlite.db'],
+        'pypdm': ['pkg_data/bean.tpl', 'pkg_data/dao.tpl'],
     },  # Optional
 
     # Although 'package_data' is the preferred approach, in some case you may
@@ -170,7 +170,7 @@ setup(
     #
     # In this case, 'data_file' will be installed into '<sys.prefix>/my_data'
     data_files=[
-        ('tpls', ['tpls/bean_tpl', 'tpls/dao_tpl'])
+        # ('tpls', ['tpls/bean.tpl', 'tpls/dao.tpl'])
     ],  # Optional
 
     # To provide executable scripts, use entry points in preference to the
@@ -182,7 +182,7 @@ setup(
     # executes the function `main` from this package when invoked:
     entry_points={  # Optional
         'console_scripts': [
-            'pypdm=pypdm:main',
+            'pypdm=builder:build',
         ],
     },
 

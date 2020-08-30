@@ -8,10 +8,10 @@
 import re
 import string
 
-from src.assist.env import *
-from src.assist import log
-from src.dbc._mysql import MysqlDBC
-from src.dbc._sqlite import SqliteDBC
+from src.pypdm.assist.env import *
+from src.pypdm.assist import log
+from src.pypdm.dbc._mysql import MysqlDBC
+from src.pypdm.dbc._sqlite import SqliteDBC
 
 
 def help() :
@@ -71,8 +71,8 @@ def connect_to_db(host, port, username, password, dbtype, dbname, charset) :
 
 class PDM :
 
-    BEAN_TPL = '%s/tpls/bean.tpl' % PRJ_DIR
-    DAO_TPL = '%s/tpls/dao.tpl' % PRJ_DIR
+    BEAN_TPL = '%s/src/pypdm/pkg_data/bean.tpl' % PRJ_DIR
+    DAO_TPL = '%s/src/pypdm/pkg_data/dao.tpl' % PRJ_DIR
 
     def __init__(self, pdbc, pdm_pkg) :
         self.pdbc = pdbc
