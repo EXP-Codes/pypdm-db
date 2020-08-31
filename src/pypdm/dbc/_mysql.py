@@ -126,3 +126,23 @@ class MysqlDBC :
             except :
                 log.error("初始化数据库 [%s] 失败" % self.dbname)
             self.close()
+
+
+    def exec(self, sql):
+        """
+        执行 SQL
+        :param sql: SQL 脚本
+        :return: 是否执行成功
+        """
+        is_ok = False
+        if self.conn() :
+            try:
+                cursor = self._conn.cursor()
+                cursor.execute(sql)
+                self._conn.commit()
+                cursor.close()
+                is_ok = True
+            except:
+                log.error("执行 SQL 失败： [%s]" % sql)
+        return is_ok
+
