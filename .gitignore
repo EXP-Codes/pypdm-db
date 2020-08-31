@@ -15,7 +15,9 @@ __pycache__/
 
 # unitest
 # tests/tmp/
+tests/data/mysql/
+
 
 # log
-# log/
+log/
 *.log
