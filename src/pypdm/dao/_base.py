@@ -6,7 +6,7 @@
 
 
 from ..assist import log
-from ..assist.cfg import CHARSET
+from ..assist.cfg import *
 
 
 class BaseDao:
@@ -117,7 +117,7 @@ class BaseDao:
         is_ok = False
         try:
             cursor = conn.cursor()
-            sql = self._append(self.SQL_DELETE, wheres.keys())
+            sql = self._append(conn.dbtype(), self.SQL_DELETE, wheres.keys())
             cursor.execute(sql, list(wheres.values()))
             conn.commit()
             cursor.close()
@@ -137,7 +137,7 @@ class BaseDao:
         is_ok = False
         try:
             cursor = conn.cursor()
-            sql = self._append(self.SQL_UPDATE, ["%s = " % bean.i_id])
+            sql = self._append(conn.dbtype(), self.SQL_UPDATE, [bean.i_id + ' = '])
             params = bean.params() + (bean.id,)
             cursor.execute(sql, params)
             conn.commit()
@@ -156,6 +156,7 @@ class BaseDao:
         """
         return self.query_some(conn)
 
+
     def query_some(self, conn, wheres={}):
         """
         查询表中部分数据
@@ -166,7 +167,7 @@ class BaseDao:
         beans = []
         try:
             cursor = conn.cursor()
-            sql = self._append(self.SQL_SELECT, wheres.keys())
+            sql = self._append(conn.dbtype(), self.SQL_SELECT, wheres.keys())
             cursor.execute(sql, list(wheres.values()))
             rows = cursor.fetchall()
             for row in rows:
@@ -188,7 +189,7 @@ class BaseDao:
         bean = None
         try:
             cursor = conn.cursor()
-            sql = self._append(self.SQL_SELECT, wheres.keys())
+            sql = self._append(conn.dbtype(), self.SQL_SELECT, wheres.keys())
             cursor.execute(sql, list(wheres.values()))
             row = cursor.fetchone()
             bean = self._to_bean(row)
@@ -199,17 +200,19 @@ class BaseDao:
         return bean
 
 
-    def _append(self, sql, keys):
+    def _append(self, dbtype, sql, keys):
         """
         追加 where 条件到 sql, 条件之间只为 and 关系（目的只是支持简单的数据库操作）
-        :param sql: 语句
+        :param dbtype: 数据库类型
+        :param sql: SQL 语句
         :param keys: 条件键值集合, 要求键值包含操作符，如： [ 'column1 like'， 'column2 =' ]
         :return: 追加 where 条件后的 sql
         """
+        placeholder = '%s' if dbtype == MYSQL else '?'
         _sql = sql
         if keys:
             for key in keys:
-                _sql = " ".join((_sql, "and", key, " %s"))  # %s 是 sql 占位符，目的是防注入
+                _sql = " ".join((_sql, "and", key, placeholder))  # %s 是 sql 占位符，目的是防注入
         return _sql
 
 

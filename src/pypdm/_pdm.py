@@ -19,6 +19,7 @@ class PDM :
         pdm_path = pdm_pkg.replace('.', '/')
         self.bean_pkg_path = '%s/bean/' % pdm_path
         self.dao_pkg_path = '%s/dao/' % pdm_path
+        self.is_mysql = (self.dbc.dbtype() == MYSQL)
 
 
     def to_pdm(self, table_whitelist, table_blacklist) :
@@ -50,13 +51,13 @@ class PDM :
     def _get_all_tables(self, conn) :
         tables = []
         try:
-            sql = 'show tables' if self.dbc.dbtype() == MYSQL else \
+            sql = 'show tables' if self.is_mysql else \
                 'select name from sqlite_master where type="table" order by name'
             cursor = conn.cursor()
             cursor.execute(sql)
             rows = cursor.fetchall()
             for row in rows:
-                if self.dbc.dbtype() == MYSQL :
+                if self.is_mysql :
                     table_name = row[0].encode(CHARSET)
                 else :
                     table_name = row[0]
@@ -126,12 +127,20 @@ class PDM :
 
     def _to_insert(self, table_name, columns) :
         cols = ', '.join(columns[1:])
-        vars = 's, %' * (len(columns) - 2)
-        return 'insert into ' + table_name + '(' + cols + ') values(%' + vars + 's)'
+        if self.is_mysql :
+            vars = 's, %' * (len(columns) - 2)
+            sql = 'insert into ' + table_name + '(' + cols + ') values(%' + vars + 's)'
+        else :
+            vars = ', ?' * (len(columns) - 2)
+            sql = 'insert into ' + table_name + '(' + cols + ') values(?' + vars + ')'
+        return sql
 
 
     def _to_update(self, table_name, columns) :
-        cols = ', '.join(list(map((lambda col: col + ' = %s'), columns[1:])))
+        cols = ', '.join(list(map(
+            (lambda col: col + ' = ' + ('%s' if self.is_mysql else '?')),
+            columns[1:]
+        )))
         return 'update ' + table_name + ' set ' + cols + ' where 1 = 1 '
 
 

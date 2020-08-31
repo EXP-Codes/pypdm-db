@@ -28,7 +28,7 @@ BEAN_TPL = '''#!/usr/bin/env python
 # -------------------------------
 
 class @{TableName} :
-    table_name = "@{table_name}"
+    table_name = '@{table_name}'
 @{columns}
 
 
@@ -43,11 +43,11 @@ class @{TableName} :
 
 
     def __repr__(self) :
-        return "\\n".join(
+        return '\\n'.join(
             (
-                "%s: {" % self.table_name,
+                '%s: {' % self.table_name,
 @{kvs}
-                "}\\n"
+                '}\\n'
             )
         )
 '''
@@ -64,13 +64,13 @@ from pypdm.dao._base import BaseDao
 
 
 class @{TableName}Dao(BaseDao) :
-    TABLE_NAME = "@{table_name}"
-    SQL_COUNT = "select count(1) from @{table_name}"
-    SQL_TRUNCATE = "truncate table @{table_name}"
-    SQL_INSERT = "@{insert}"
-    SQL_DELETE = "delete from @{table_name} where 1 = 1 "
-    SQL_UPDATE = "@{update}"
-    SQL_SELECT = "@{select}"
+    TABLE_NAME = '@{table_name}'
+    SQL_COUNT = 'select count(1) from @{table_name}'
+    SQL_TRUNCATE = 'truncate table @{table_name}'
+    SQL_INSERT = '@{insert}'
+    SQL_DELETE = 'delete from @{table_name} where 1 = 1 '
+    SQL_UPDATE = '@{update}'
+    SQL_SELECT = '@{select}'
 
     def __init__(self) :
         BaseDao.__init__(self)

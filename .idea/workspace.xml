@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a1949b09-79f1-451c-958b-045a43e53023" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/data/sqlite/test.db" afterPath="$PROJECT_DIR$/tests/data/sqlite/test.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pypdm/dao/_base.py" afterPath="$PROJECT_DIR$/src/pypdm/dao/_base.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pypdm/_pdm.py" afterPath="$PROJECT_DIR$/src/pypdm/_pdm.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pypdm/assist/cfg.py" afterPath="$PROJECT_DIR$/src/pypdm/assist/cfg.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_pypdm_sqlite.py" afterPath="$PROJECT_DIR$/tests/test_pypdm_sqlite.py" />
@@ -24,14 +24,15 @@
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build.coverage" NAME="Unittest TestSimple.test_build Coverage Results" MODIFIED="1598785740900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittests_in_test_pypdm.coverage" NAME="Unittests in test_pypdm Coverage Results" MODIFIED="1598877487562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build__1_.coverage" NAME="Unittest TestSimple.test_build (1) Coverage Results" MODIFIED="1598788973316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/pypdm$Unittests_in_TestPypdmSqlite.coverage" NAME="Unittests in TestPypdmSqlite Coverage Results" MODIFIED="1598881371046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pypdm$Unittests_in_TestPypdmSqlite.coverage" NAME="Unittests in TestPypdmSqlite Coverage Results" MODIFIED="1598887866021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$pypdm.coverage" NAME="pypdm Coverage Results" MODIFIED="1598793656086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build__2_.coverage" NAME="Unittest TestSimple.test_build (2) Coverage Results" MODIFIED="1598784934745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build__4_.coverage" NAME="Unittest TestSimple.test_build (4) Coverage Results" MODIFIED="1598788660132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestPypdmSqlite_test_build_pdm.coverage" NAME="Unittest TestPypdmSqlite.test_build_pdm Coverage Results" MODIFIED="1598877915425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build__3_.coverage" NAME="Unittest TestSimple.test_build (3) Coverage Results" MODIFIED="1598876126807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittests_in_TestSimple.coverage" NAME="Unittests in TestSimple Coverage Results" MODIFIED="1598870220372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/pypdm$Unittests_in_test_pypdm_sqlite__1_.coverage" NAME="Unittests in test_pypdm_sqlite (1) Coverage Results" MODIFIED="1598882934299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pypdm$Unittest_TestPypdmSqlite_test_query.coverage" NAME="Unittest TestPypdmSqlite.test_query Coverage Results" MODIFIED="1598883115304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pypdm$Unittests_in_test_pypdm_sqlite__1_.coverage" NAME="Unittests in test_pypdm_sqlite (1) Coverage Results" MODIFIED="1598887474817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$test_pypdm.coverage" NAME="test_pypdm Coverage Results" MODIFIED="1598788826110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_bbb.coverage" NAME="Unittest TestSimple.test_bbb Coverage Results" MODIFIED="1598876140172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
@@ -47,11 +48,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="933" max-vertical-offset="1710">
+              <caret line="55" column="3" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test_pypdm_sqlite.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/test_pypdm_sqlite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6576577" vertical-offset="648" max-vertical-offset="1425">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.07335907" vertical-offset="684" max-vertical-offset="2299">
+              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
               <folding>
                 <element signature="e#209#222#0" expanded="true" />
               </folding>
@@ -62,29 +73,45 @@
       <file leaf-file-name="_base.py" pinned="false" current-in-tab="false">
         <entry file="file://S:/04_work/python/python38/Lib/site-packages/pypdm/dao/_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3104" max-vertical-offset="4655">
-              <caret line="201" column="31" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1793" max-vertical-offset="4712">
+              <caret line="109" column="8" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/run.log">
+      <file leaf-file-name="_sqlite.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pypdm/dbc/_sqlite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6973" max-vertical-offset="7106">
-              <caret line="367" column="0" selection-start-line="367" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="2831">
+              <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+              <folding>
+                <element signature="e#230#244#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="err.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/err.log">
+      <file leaf-file-name="_base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pypdm/dao/_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="114">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-0.7" vertical-offset="3646" max-vertical-offset="4731">
+              <caret line="193" column="35" selection-start-line="193" selection-start-column="35" selection-end-line="193" selection-end-column="35" />
+              <folding>
+                <element signature="e#128#152#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_mysql.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pypdm/dbc/_mysql.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="3135">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding>
+                <element signature="e#197#219#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,55 +119,16 @@
       <file leaf-file-name="_pdm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pypdm/_pdm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1883" max-vertical-offset="3477">
-              <caret line="118" column="61" selection-start-line="118" selection-start-column="61" selection-end-line="118" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2282" max-vertical-offset="3648">
+              <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding>
                 <element signature="e#161#170#0" expanded="true" />
-                <marker date="1598882056675" expanded="true" signature="1576:1639" placeholder="select name ..sqlite_master..." />
-                <marker date="1598882056675" expanded="true" signature="2301:2325" placeholder="select * fro..missing_value..." />
-                <marker date="1598882056675" expanded="true" signature="4529:4596" placeholder="insert into ..." />
-                <marker date="1598882056675" expanded="true" signature="4864:4909" placeholder="select missi..missing_value..." />
+                <marker date="1598884532972" expanded="true" signature="1616:1679" placeholder="select name ..sqlite_master..." />
+                <marker date="1598884532972" expanded="true" signature="2328:2352" placeholder="select * fro..missing_value..." />
+                <marker date="1598884532972" expanded="true" signature="4590:4657" placeholder="insert into ..." />
+                <marker date="1598884532972" expanded="true" signature="4739:4805" placeholder="insert into ..." />
+                <marker date="1598884532972" expanded="true" signature="5159:5204" placeholder="select missi..missing_value..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cfg.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pypdm/assist/cfg.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1691">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shutil.py" pinned="false" current-in-tab="false">
-        <entry file="file://S:/04_work/python/python38/Lib/shutil.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="10894" max-vertical-offset="27151">
-              <caret line="592" column="0" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pypdm/assist/log.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="672" max-vertical-offset="1881">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
-              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -169,7 +157,6 @@
         <option value="$PROJECT_DIR$/src/pypdm/pkg_data/dao.tpl" />
         <option value="$PROJECT_DIR$/src/pypdm/assist/env.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/pypdm/dao/_base.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/tests/data/drop_db.sql" />
         <option value="$PROJECT_DIR$/tests/data/init_db.sql" />
@@ -180,9 +167,12 @@
         <option value="$PROJECT_DIR$/src/pypdm/assist/log.py" />
         <option value="$PROJECT_DIR$/src/pypdm/builder.py" />
         <option value="$PROJECT_DIR$/tests/src/pdm/sqlite/dao/t_teachers.py" />
-        <option value="$PROJECT_DIR$/src/pypdm/assist/cfg.py" />
-        <option value="$PROJECT_DIR$/src/pypdm/_pdm.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/pypdm/assist/cfg.py" />
+        <option value="S:/04_work/python/python38/Lib/site-packages/pypdm/dao/_base.py" />
+        <option value="$PROJECT_DIR$/src/pypdm/_pdm.py" />
+        <option value="$PROJECT_DIR$/tests/tmp/pdm/sqlite/dao/t_teachers.py" />
+        <option value="$PROJECT_DIR$/src/pypdm/dao/_base.py" />
         <option value="$PROJECT_DIR$/tests/test_pypdm_sqlite.py" />
       </list>
     </option>
@@ -409,7 +399,7 @@
       <recent name="D:\workspace\Github\pypdm\tests\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_pypdm_sqlite (1)">
+  <component name="RunManager" selected="Python tests.Unittests in TestPypdmSqlite">
     <configuration default="false" name="Unittests in test_pypdm_sqlite" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -426,31 +416,6 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestSimple.test_bbb" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pypdm" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\workspace\Github\pypdm\tests\test_pypdm_sqlite.py" />
-      <option name="CLASS_NAME" value="TestSimple" />
-      <option name="METHOD_NAME" value="test_bbb" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -526,6 +491,31 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestPypdmSqlite.test_query" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pypdm" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_pypdm_sqlite.py" />
+      <option name="CLASS_NAME" value="TestPypdmSqlite" />
+      <option name="METHOD_NAME" value="test_query" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -725,18 +715,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_pypdm_sqlite" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_bbb" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_pypdm_sqlite (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestPypdmSqlite.test_build_pdm" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestPypdmSqlite" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_pypdm_sqlite (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestPypdmSqlite.test_build_pdm" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestPypdmSqlite" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestPypdmSqlite.test_query" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_pypdm_sqlite (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestPypdmSqlite" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestPypdmSqlite.test_build_pdm" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_pypdm_sqlite" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestSimple.test_bbb" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestPypdmSqlite" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_pypdm_sqlite (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestPypdmSqlite.test_query" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestPypdmSqlite.test_build_pdm" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_pypdm_sqlite" />
       </list>
     </recent_temporary>
   </component>
@@ -763,7 +753,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23322034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -899,14 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pypdm/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://S:/04_work/python/python38/Lib/string.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2515" max-vertical-offset="5472">
@@ -920,7 +902,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3591">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -930,24 +912,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="933" max-vertical-offset="1710">
-          <caret line="55" column="3" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="3971">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <element signature="e#203#246#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -999,36 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pypdm/dao/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="4674">
-          <caret line="122" column="26" selection-start-line="122" selection-start-column="26" selection-end-line="122" selection-end-column="26" />
-          <folding>
-            <element signature="e#128#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pypdm/dbc/_sqlite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="2831">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="e#230#244#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pypdm/dbc/_mysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="401" max-vertical-offset="3135">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="e#197#219#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://S:/04_work/python/python38/Lib/os.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="4225" max-vertical-offset="21204">
@@ -1039,8 +973,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/log/run.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6973" max-vertical-offset="7106">
-          <caret line="367" column="0" selection-start-line="367" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="7429" max-vertical-offset="7562">
+          <caret line="391" column="0" selection-start-line="391" selection-start-column="0" selection-end-line="391" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1061,50 +995,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pypdm/builder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1729">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#163#195#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://S:/04_work/python/python38/Lib/shutil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="10894" max-vertical-offset="27151">
           <caret line="592" column="0" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pypdm/assist/cfg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1691">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pypdm/_pdm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1883" max-vertical-offset="3477">
-          <caret line="118" column="61" selection-start-line="118" selection-start-column="61" selection-end-line="118" selection-end-column="61" />
-          <folding>
-            <element signature="e#161#170#0" expanded="true" />
-            <marker date="1598882056675" expanded="true" signature="1576:1639" placeholder="select name ..sqlite_master..." />
-            <marker date="1598882056675" expanded="true" signature="2301:2325" placeholder="select * fro..missing_value..." />
-            <marker date="1598882056675" expanded="true" signature="4529:4596" placeholder="insert into ..." />
-            <marker date="1598882056675" expanded="true" signature="4864:4909" placeholder="select missi..missing_value..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://S:/04_work/python/python38/Lib/site-packages/pypdm/dao/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3104" max-vertical-offset="4655">
-          <caret line="201" column="31" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1117,10 +1011,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3194" max-vertical-offset="3971">
+          <caret line="197" column="24" selection-start-line="197" selection-start-column="24" selection-end-line="197" selection-end-column="61" />
+          <folding>
+            <element signature="e#203#246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pypdm/builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1729">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#163#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pypdm/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pypdm/assist/cfg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="910" max-vertical-offset="1691">
+          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="933" max-vertical-offset="1710">
+          <caret line="55" column="3" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pypdm/dbc/_mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="401" max-vertical-offset="3135">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#197#219#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pypdm/_pdm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2282" max-vertical-offset="3648">
+          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="e#161#170#0" expanded="true" />
+            <marker date="1598884532972" expanded="true" signature="1616:1679" placeholder="select name ..sqlite_master..." />
+            <marker date="1598884532972" expanded="true" signature="2328:2352" placeholder="select * fro..missing_value..." />
+            <marker date="1598884532972" expanded="true" signature="4590:4657" placeholder="insert into ..." />
+            <marker date="1598884532972" expanded="true" signature="4739:4805" placeholder="insert into ..." />
+            <marker date="1598884532972" expanded="true" signature="5159:5204" placeholder="select missi..missing_value..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pypdm/dbc/_sqlite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="2831">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <folding>
+            <element signature="e#230#244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pypdm/dao/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7" vertical-offset="3646" max-vertical-offset="4731">
+          <caret line="193" column="35" selection-start-line="193" selection-start-column="35" selection-end-line="193" selection-end-column="35" />
+          <folding>
+            <element signature="e#128#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://S:/04_work/python/python38/Lib/site-packages/pypdm/dao/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1793" max-vertical-offset="4712">
+          <caret line="109" column="8" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_pypdm_sqlite.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6576577" vertical-offset="648" max-vertical-offset="1425">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.07335907" vertical-offset="684" max-vertical-offset="2299">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
           <folding>
             <element signature="e#209#222#0" expanded="true" />
           </folding>
