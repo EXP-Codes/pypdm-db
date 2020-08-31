@@ -31,7 +31,7 @@ def build(
     :param port: 数据库端口
     :param username: 登陆账号
     :param password: 登陆密码
-    :param dbname: 数据库名称
+    :param dbname: 数据库名称 / 数据库路径
     :param charset: 数据库编码
     :param pdm_pkg: 期望生成 PDM 文件的包路径
     :param table_whitelist: 要生成哪些表的 PDM 文件（默认所有表）
@@ -45,8 +45,10 @@ def build(
     paths = []
     dbc = _connect_to_db(dbtype, host, port, username, password, dbname, charset)
     if dbc :
+        log.info('正在构造数据表 PDM ...')
         pdm = PDM(dbc, pdm_pkg)
         paths.extend(pdm.to_pdm(table_whitelist, table_blacklist))
+        log.info('构造 PDM 完成，生成文件路径如下：{\n\t%s\n}' % '\n\t'.join(paths))
     return paths
 
 
@@ -59,18 +61,22 @@ def _connect_to_db(dbtype, host, port, username, password, dbname, charset) :
     :param port: 数据库端口
     :param username: 登陆账号
     :param password: 登陆密码
-    :param dbname: 数据库名称
+    :param dbname: 数据库名称 / 数据库路径
     :param charset: 数据库编码
     :return: 数据库连接对象
     '''
     if dbtype.lower() == SQLITE :
+        log.info('已构造连接对象： [sqlite://%s]' % dbname)
         dbc = SqliteDBC(dbname)
 
     elif dbtype.lower() == MYSQL :
+        log.info('已构造连接对象： [mysql://%s:%s@%s:%i/%s?charset=%s]' %
+                 (username, password, host, port, dbname, charset))
         dbc = MysqlDBC(host, port, username, password, dbname, charset)
 
     else :
         dbc = None
+        log.info('无效的数据库类型： [%s]' % dbtype)
     return dbc
 
 

@@ -10,6 +10,7 @@ from src.pypdm.dbc._sqlite import SqliteDBC
 
 DB_PATH =  'data/sqlite/test.db'
 DB_CONN = SqliteDBC(DB_PATH)
+CACHE_ROOT_DIR = 'src'
 
 
 class TestPypdmSqlite(unittest.TestCase):
@@ -21,7 +22,8 @@ class TestPypdmSqlite(unittest.TestCase):
     @classmethod
     def tearDownClass(cls) :
         DB_CONN.exec_script('data/rollback_db.sql')
-        shutil.rmtree('src')
+        # if os.path.exists(CACHE_ROOT_DIR) :
+        #     shutil.rmtree(CACHE_ROOT_DIR)
 
     def setUp(self) :
         pass
@@ -45,8 +47,14 @@ class TestPypdmSqlite(unittest.TestCase):
         self.assertTrue('src/pdm/sqlite/dao/t_students.py' in paths)
 
 
-    def test_bbb(self) :
-        print('vvv')
+    def test_insert(self) :
+        from tests.src.pdm.sqlite.dao.t_teachers import TTeachersDao
+        dao = TTeachersDao()
+        beans = dao.query_all(DB_CONN)
+        for bean in beans :
+            print(bean)
+
+
 
 
 if __name__ == '__main__':
