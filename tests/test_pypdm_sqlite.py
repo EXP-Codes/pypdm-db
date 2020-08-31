@@ -5,7 +5,6 @@
 import shutil
 import unittest
 from src.pypdm.assist.cfg import *
-from src.pypdm import builder
 from src.pypdm.dbc._sqlite import SqliteDBC
 
 DB_PATH =  'data/sqlite/test.db'
@@ -19,40 +18,46 @@ class TestPypdmSqlite(unittest.TestCase):
     def setUpClass(cls) :
         DB_CONN.exec_script('data/init_db.sql')
 
+
     @classmethod
     def tearDownClass(cls) :
         DB_CONN.exec_script('data/rollback_db.sql')
-        # if os.path.exists(CACHE_ROOT_DIR) :
-        #     shutil.rmtree(CACHE_ROOT_DIR)
+        if os.path.exists(CACHE_ROOT_DIR) :
+            shutil.rmtree(CACHE_ROOT_DIR)
+
 
     def setUp(self) :
-        pass
+        DB_CONN.conn()
+
 
     def tearDown(self) :
-        pass
+        DB_CONN.close()
+
 
     def test_build_pdm(self) :
-        paths = builder.build(
+        from src.pypdm.builder import build
+        paths = build(
             dbtype = SQLITE,
             dbname = DB_PATH,
-            pdm_pkg = 'src.pdm.sqlite',
+            pdm_pkg = 'tmp.pdm.sqlite',
             table_whitelist = [ 't_teachers', 't_students' ],
             table_blacklist = [ 't_employers', 't_employees' ],
             to_log = True
         )
         self.assertEqual(len(paths), 4)
-        self.assertTrue('src/pdm/sqlite/bean/t_teachers.py' in paths)
-        self.assertTrue('src/pdm/sqlite/dao/t_teachers.py' in paths)
-        self.assertTrue('src/pdm/sqlite/bean/t_students.py' in paths)
-        self.assertTrue('src/pdm/sqlite/dao/t_students.py' in paths)
+        self.assertTrue('tmp/pdm/sqlite/bean/t_teachers.py' in paths)
+        self.assertTrue('tmp/pdm/sqlite/dao/t_teachers.py' in paths)
+        self.assertTrue('tmp/pdm/sqlite/bean/t_students.py' in paths)
+        self.assertTrue('tmp/pdm/sqlite/dao/t_students.py' in paths)
 
 
-    def test_insert(self) :
-        from tests.src.pdm.sqlite.dao.t_teachers import TTeachersDao
+    def test_query(self) :
+        from tests.tmp.pdm.sqlite.dao.t_teachers import TTeachersDao
         dao = TTeachersDao()
         beans = dao.query_all(DB_CONN)
-        for bean in beans :
-            print(bean)
+        self.assertEqual(len(beans), 3)
+        # for bean in beans :
+        #     print(bean)
 
 
 

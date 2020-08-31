@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a1949b09-79f1-451c-958b-045a43e53023" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/data/sqlite/test.db" afterPath="$PROJECT_DIR$/tests/data/sqlite/test.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pypdm/_pdm.py" afterPath="$PROJECT_DIR$/src/pypdm/_pdm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pypdm/builder.py" afterPath="$PROJECT_DIR$/src/pypdm/builder.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pypdm/assist/cfg.py" afterPath="$PROJECT_DIR$/src/pypdm/assist/cfg.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_pypdm_sqlite.py" afterPath="$PROJECT_DIR$/tests/test_pypdm_sqlite.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,7 +31,7 @@
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestPypdmSqlite_test_build_pdm.coverage" NAME="Unittest TestPypdmSqlite.test_build_pdm Coverage Results" MODIFIED="1598877915425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_build__3_.coverage" NAME="Unittest TestSimple.test_build (3) Coverage Results" MODIFIED="1598876126807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittests_in_TestSimple.coverage" NAME="Unittests in TestSimple Coverage Results" MODIFIED="1598870220372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/pypdm$Unittests_in_test_pypdm_sqlite__1_.coverage" NAME="Unittests in test_pypdm_sqlite (1) Coverage Results" MODIFIED="1598881460075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pypdm$Unittests_in_test_pypdm_sqlite__1_.coverage" NAME="Unittests in test_pypdm_sqlite (1) Coverage Results" MODIFIED="1598882934299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$test_pypdm.coverage" NAME="test_pypdm Coverage Results" MODIFIED="1598788826110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pypdm$Unittest_TestSimple_test_bbb.coverage" NAME="Unittest TestSimple.test_bbb Coverage Results" MODIFIED="1598876140172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
@@ -49,8 +50,8 @@
       <file leaf-file-name="test_pypdm_sqlite.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/test_pypdm_sqlite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8558559" vertical-offset="399" max-vertical-offset="1330">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6576577" vertical-offset="648" max-vertical-offset="1425">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding>
                 <element signature="e#209#222#0" expanded="true" />
               </folding>
@@ -58,16 +59,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="t_teachers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/src/pdm/sqlite/dao/t_teachers.py">
+      <file leaf-file-name="_base.py" pinned="false" current-in-tab="false">
+        <entry file="file://S:/04_work/python/python38/Lib/site-packages/pypdm/dao/_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1598881460961" expanded="true" signature="301:332" placeholder="select count..t_teachers..." />
-                <marker date="1598881460961" expanded="true" signature="399:454" placeholder="insert into ..." />
-                <marker date="1598881460961" expanded="true" signature="474:508" placeholder="delete from ..." />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="3104" max-vertical-offset="4655">
+              <caret line="201" column="31" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,8 +72,8 @@
       <file leaf-file-name="run.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log/run.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3781" max-vertical-offset="3914">
-              <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6973" max-vertical-offset="7106">
+              <caret line="367" column="0" selection-start-line="367" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,24 +92,24 @@
       <file leaf-file-name="_pdm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pypdm/_pdm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2453" max-vertical-offset="3306">
-              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1883" max-vertical-offset="3477">
+              <caret line="118" column="61" selection-start-line="118" selection-start-column="61" selection-end-line="118" selection-end-column="61" />
               <folding>
                 <element signature="e#161#170#0" expanded="true" />
-                <marker date="1598881340893" expanded="true" signature="1576:1639" placeholder="select name ..sqlite_master..." />
-                <marker date="1598881340893" expanded="true" signature="2301:2325" placeholder="select * fro..missing_value..." />
-                <marker date="1598881340893" expanded="true" signature="4527:4594" placeholder="insert into ..." />
-                <marker date="1598881340893" expanded="true" signature="4862:4907" placeholder="select missi..missing_value..." />
+                <marker date="1598882056675" expanded="true" signature="1576:1639" placeholder="select name ..sqlite_master..." />
+                <marker date="1598882056675" expanded="true" signature="2301:2325" placeholder="select * fro..missing_value..." />
+                <marker date="1598882056675" expanded="true" signature="4529:4596" placeholder="insert into ..." />
+                <marker date="1598882056675" expanded="true" signature="4864:4909" placeholder="select missi..missing_value..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/src/pdm/sqlite/dao/__init__.py">
+      <file leaf-file-name="cfg.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pypdm/assist/cfg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="114">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1691">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,18 +121,6 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="10894" max-vertical-offset="27151">
               <caret line="592" column="0" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_mysql.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pypdm/dbc/_mysql.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="401" max-vertical-offset="3135">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding>
-                <element signature="e#197#219#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -154,7 +139,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -189,14 +174,15 @@
         <option value="$PROJECT_DIR$/tests/data/drop_db.sql" />
         <option value="$PROJECT_DIR$/tests/data/init_db.sql" />
         <option value="$PROJECT_DIR$/tests/data/rollback_db.sql" />
-        <option value="$PROJECT_DIR$/src/pypdm/assist/cfg.py" />
         <option value="$PROJECT_DIR$/src/pypdm/dbc/_sqlite.py" />
         <option value="$PROJECT_DIR$/src/pypdm/dbc/_mysql.py" />
         <option value="$PROJECT_DIR$/tests/test_pypdm.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/pypdm/assist/log.py" />
         <option value="$PROJECT_DIR$/src/pypdm/builder.py" />
+        <option value="$PROJECT_DIR$/tests/src/pdm/sqlite/dao/t_teachers.py" />
+        <option value="$PROJECT_DIR$/src/pypdm/assist/cfg.py" />
         <option value="$PROJECT_DIR$/src/pypdm/_pdm.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/tests/test_pypdm_sqlite.py" />
       </list>
     </option>
@@ -262,32 +248,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sqlite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -803,7 +763,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23322034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1049,14 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pypdm/assist/cfg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1691">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pypdm/dbc/_sqlite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="2831">
@@ -1077,14 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://S:/04_work/python/python38/Lib/os.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="4225" max-vertical-offset="21204">
@@ -1095,8 +1039,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/log/run.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3781" max-vertical-offset="3914">
-          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6973" max-vertical-offset="7106">
+          <caret line="367" column="0" selection-start-line="367" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1135,44 +1079,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pypdm/_pdm.py">
+    <entry file="file://$PROJECT_DIR$/src/pypdm/assist/cfg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2453" max-vertical-offset="3306">
-          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-          <folding>
-            <element signature="e#161#170#0" expanded="true" />
-            <marker date="1598881340893" expanded="true" signature="1576:1639" placeholder="select name ..sqlite_master..." />
-            <marker date="1598881340893" expanded="true" signature="2301:2325" placeholder="select * fro..missing_value..." />
-            <marker date="1598881340893" expanded="true" signature="4527:4594" placeholder="insert into ..." />
-            <marker date="1598881340893" expanded="true" signature="4862:4907" placeholder="select missi..missing_value..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/src/pdm/sqlite/dao/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1691">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/src/pdm/sqlite/dao/t_teachers.py">
+    <entry file="file://$PROJECT_DIR$/src/pypdm/_pdm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1883" max-vertical-offset="3477">
+          <caret line="118" column="61" selection-start-line="118" selection-start-column="61" selection-end-line="118" selection-end-column="61" />
           <folding>
-            <marker date="1598881460961" expanded="true" signature="301:332" placeholder="select count..t_teachers..." />
-            <marker date="1598881460961" expanded="true" signature="399:454" placeholder="insert into ..." />
-            <marker date="1598881460961" expanded="true" signature="474:508" placeholder="delete from ..." />
+            <element signature="e#161#170#0" expanded="true" />
+            <marker date="1598882056675" expanded="true" signature="1576:1639" placeholder="select name ..sqlite_master..." />
+            <marker date="1598882056675" expanded="true" signature="2301:2325" placeholder="select * fro..missing_value..." />
+            <marker date="1598882056675" expanded="true" signature="4529:4596" placeholder="insert into ..." />
+            <marker date="1598882056675" expanded="true" signature="4864:4909" placeholder="select missi..missing_value..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://S:/04_work/python/python38/Lib/site-packages/pypdm/dao/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3104" max-vertical-offset="4655">
+          <caret line="201" column="31" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_pypdm_sqlite.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8558559" vertical-offset="399" max-vertical-offset="1330">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6576577" vertical-offset="648" max-vertical-offset="1425">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
             <element signature="e#209#222#0" expanded="true" />
           </folding>

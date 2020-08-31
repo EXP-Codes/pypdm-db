@@ -113,7 +113,7 @@ class PDM :
         log.debug('正在构造数据表 [%s] 的 DAO 文件' % table_name)
         tpl = DBTemplate(DAO_TPL)
         placeholders = {
-            '{pkg_path}': self.pdm_pkg,
+            # '{pkg_path}': self.pdm_pkg,
             '{table_name}': table_name,
             '{TableName}': self._to_camel(table_name),
             '{insert}': self._to_insert(table_name, columns),
@@ -151,15 +151,24 @@ class PDM :
         '''
         if not os.path.exists(filedir) :
             os.makedirs(filedir)
-            initpy = '%s__init__.py' % filedir
-            with open(initpy, 'w+') as file :
-                file.write('')
+            self._create_init_py(filedir)
 
         path = '%s%s%s' % (filedir, filename, suffix)
         with open(path, 'w+') as file :
             file.write(content)
         return path
 
+
+    def _create_init_py(self, pkg_dir) :
+        '''
+        在包目录的每一层创建 __init__.py 文件
+        :param pkg_dir: 包目录
+        '''
+        dir = pkg_dir
+        while dir :
+            initpy_path = '%s/__init__.py' % dir
+            with open(initpy_path, 'w+') as file : file.write('')
+            dir = os.path.dirname(dir)
 
 
 
