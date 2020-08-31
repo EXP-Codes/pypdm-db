@@ -17,6 +17,8 @@ PRJ_DIR = os.path.dirname(
 )
 
 CHARSET = 'utf-8'
+MYSQL = 'mysql'
+SQLITE = 'sqlite'
 
 
 BEAN_TPL = '''#!/usr/bin/env python

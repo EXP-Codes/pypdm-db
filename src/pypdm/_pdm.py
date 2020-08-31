@@ -26,28 +26,40 @@ class PDM :
         if not whitelist :
             whitelist = self.get_all_tables(conn)
 
+        paths = []
         for table_name in whitelist :
             if table_name in blacklist :
                 continue
 
             columns = self.get_columns(conn, table_name)
             bean_file_content = self._to_beans(table_name, columns)
-            self.save(bean_file_content, self.bean_pkg_path, table_name, '.py')
+            path = self.save(bean_file_content, self.bean_pkg_path, table_name, '.py')
+            paths.append(path)
 
             dao_file_content = self._to_daos(table_name, columns)
-            self.save(dao_file_content, self.dao_pkg_path, table_name, '.py')
+            path = self.save(dao_file_content, self.dao_pkg_path, table_name, '.py')
+            paths.append(path)
 
         self.dbc.close()
+        return paths
 
 
     def get_all_tables(self, conn) :
         tables = []
         try:
+            sql = 'show tables' if self.dbc.dbtype() == MYSQL else \
+                'select name from sqlite_master where type="table" order by name'
             cursor = conn.cursor()
-            cursor.execute('show tables')
+            cursor.execute(sql)
             rows = cursor.fetchall()
             for row in rows:
-                tables.append(row[0].encode(CHARSET))
+                if self.dbc.dbtype() == MYSQL :
+                    table_name = row[0].encode(CHARSET)
+                else :
+                    table_name = row[0]
+                    if table_name == 'sqlite_sequence' :
+                        continue
+                tables.append(table_name)
             cursor.close()
         except:
             log.error("查询 table 列表失败")

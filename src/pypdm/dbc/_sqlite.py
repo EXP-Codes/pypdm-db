@@ -8,6 +8,7 @@
 # -----------------------------------------------
 
 import sqlite3
+from ..assist.cfg import *
 from ..assist import log
 
 
@@ -23,6 +24,14 @@ class SqliteDBC :
         """
         self.dbpath = dbpath
         self._conn = None
+
+
+    def dbtype(self) :
+        '''
+        获取数据库类型
+        :return: 数据库类型
+        '''
+        return SQLITE
 
 
     def conn(self) :
@@ -87,34 +96,37 @@ class SqliteDBC :
         return self._conn.cursor() if self._conn else None
 
 
-    def init(self, sql_script) :
+    def exec_script(self, filepath) :
         """
-        初始化数据库
-        :param sql_script : 建库脚本（注意控制好数据表是否存在）
-        :return : 是否初始化成功
+        执行 SQL 脚本
+        :param filepath : 脚本文件
+        :return : 是否执行成功
         """
+        is_ok = False
         if self.conn() :
             try :
-                with open(sql_script, "r") as file :
+                with open(filepath, "r") as file :
                     data = file.read()
 
-                if data :
                     cursor = self._conn.cursor()
                     sqls = data.split(";")
                     for sql in sqls :
                         sql = sql.strip()
                         if sql :
                             cursor.execute(sql)
+                    self._conn.commit()
                     cursor.close()
+                    is_ok = True
             except :
-                log.error("初始化数据库 [%s] 失败" % self.dbpath)
+                log.error("执行 SQL 脚本失败： [%s]" % filepath)
             self.close()
+        return is_ok
 
 
-    def exec(self, sql):
+    def exec_sql(self, sql):
         """
-        执行 SQL
-        :param sql: SQL 脚本
+        执行 SQL 语句
+        :param sql: SQL 语句
         :return: 是否执行成功
         """
         is_ok = False
@@ -126,6 +138,6 @@ class SqliteDBC :
                 cursor.close()
                 is_ok = True
             except:
-                log.error("从表 [%s] 删除数据失败" % self.TABLE_NAME)
+                log.error("执行 SQL 失败： [%s]" % sql)
         return is_ok
 

@@ -42,10 +42,12 @@ def build(
     if to_log :
         log.init()
 
-    dbc = _connect_to_db(host, port, username, password, dbtype, dbname, charset)
+    paths = []
+    dbc = _connect_to_db(dbtype, host, port, username, password, dbname, charset)
     if dbc :
         pdm = PDM(dbc, pdm_pkg)
-        pdm.to_pdm(table_whitelist, table_blacklist)
+        paths.extend(pdm.to_pdm(table_whitelist, table_blacklist))
+    return paths
 
 
 
@@ -61,12 +63,14 @@ def _connect_to_db(dbtype, host, port, username, password, dbname, charset) :
     :param charset: 数据库编码
     :return: 数据库连接对象
     '''
-    if  dbtype.lower() == 'sqlite' :
+    if dbtype.lower() == SQLITE :
         dbc = SqliteDBC(dbname)
 
-    elif dbtype.lower() == 'mysql' :
+    elif dbtype.lower() == MYSQL :
         dbc = MysqlDBC(host, port, username, password, dbname, charset)
 
+    else :
+        dbc = None
     return dbc
 
 
