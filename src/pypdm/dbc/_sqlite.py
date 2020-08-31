@@ -79,6 +79,14 @@ class SqliteDBC :
         return is_ok
 
 
+    def cursor(self) :
+        """
+        返回数据库连接游标
+        :return: 游标
+        """
+        return self._conn.cursor() if self._conn else None
+
+
     def init(self, sql_script) :
         """
         初始化数据库
@@ -87,7 +95,6 @@ class SqliteDBC :
         """
         if self.conn() :
             try :
-                data = ""
                 with open(sql_script, "r") as file :
                     data = file.read()
 

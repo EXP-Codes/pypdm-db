@@ -53,8 +53,10 @@ def build(
 
     dbc = connect_to_db(host, port, username, password, dbtype, dbname, charset)
     if dbc :
+        dbc.conn()
         pdm = PDM(dbc, pdm_pkg)
         pdm.to_pdm(table_whitelist, table_blacklist)
+        dbc.close()
 
 
 
@@ -71,14 +73,12 @@ def connect_to_db(host, port, username, password, dbtype, dbname, charset) :
 
 class PDM :
 
-    BEAN_TPL = 'pkg_data/bean.tpl'
-    DAO_TPL = 'pkg_data/dao.tpl'
-
     def __init__(self, pdbc, pdm_pkg) :
         self.pdbc = pdbc
         self.pdm_pkg = pdm_pkg
-        self.bean_pkg_path = '%s/%s/bean/' % (PRJ_DIR, pdm_pkg.replace('.', '/'))
-        self.dao_pkg_path = '%s/%s/dao/' % (PRJ_DIR, pdm_pkg.replace('.', '/'))
+        pdm_path = pdm_pkg.replace('.', '/')
+        self.bean_pkg_path = '%s/bean/' % pdm_path
+        self.dao_pkg_path = '%s/dao/' % pdm_path
 
 
     def to_pdm(self, whitelist = [], blacklist = []) :
@@ -123,8 +123,7 @@ class PDM :
 
 
     def _to_beans(self, table_name, columns) :
-        data = pkgutil.get_data(__package__, self.BEAN_TPL)
-        tpl = DBTemplate(data.decode(CHARSET))
+        tpl = DBTemplate(BEAN_TPL)
         variables = list(map(self.to_var, columns))
         placeholders = {
             '{table_name}': table_name,
@@ -154,8 +153,7 @@ class PDM :
 
 
     def _to_daos(self, table_name, columns) :
-        data = pkgutil.get_data(__package__, self.DAO_TPL)
-        tpl = DBTemplate(data.decode(CHARSET))
+        tpl = DBTemplate(DAO_TPL)
         placeholders = {
             '{pkg_path}': self.pdm_pkg,
             '{table_name}': table_name,

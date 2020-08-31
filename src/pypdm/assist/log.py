@@ -9,7 +9,6 @@ import os
 import traceback
 import logging
 from logging.handlers import TimedRotatingFileHandler
-
 from .cfg import PRJ_DIR
 
 
@@ -95,3 +94,4 @@ def error(msg):
         logging.exception(traceback.format_exc())
     else :
         print(msg)
+        print(traceback.format_exc())

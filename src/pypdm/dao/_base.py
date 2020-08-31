@@ -4,7 +4,9 @@
 # 数据访问对象：基类
 # -------------------------------
 
+
 from ..assist import log
+from ..assist.cfg import CHARSET
 
 
 class BaseDao:
@@ -116,7 +118,7 @@ class BaseDao:
         try:
             cursor = conn.cursor()
             sql = self._append(self.SQL_DELETE, wheres.keys())
-            cursor.execute(sql, wheres.values())
+            cursor.execute(sql, list(wheres.values()))
             conn.commit()
             cursor.close()
             is_ok = True
@@ -165,7 +167,7 @@ class BaseDao:
         try:
             cursor = conn.cursor()
             sql = self._append(self.SQL_SELECT, wheres.keys())
-            cursor.execute(sql, wheres.values())
+            cursor.execute(sql, list(wheres.values()))
             rows = cursor.fetchall()
             for row in rows:
                 bean = self._to_bean(row)
@@ -187,7 +189,7 @@ class BaseDao:
         try:
             cursor = conn.cursor()
             sql = self._append(self.SQL_SELECT, wheres.keys())
-            cursor.execute(sql, wheres.values())
+            cursor.execute(sql, list(wheres.values()))
             row = cursor.fetchone()
             bean = self._to_bean(row)
             conn.commit()
@@ -231,7 +233,7 @@ class BaseDao:
         val = None
         try:
             val = row[idx]
-            if val is not None and isinstance(val, unicode):
+            if val is not None and isinstance(val, str):
                 val = val.encode(CHARSET)
         except:
             pass

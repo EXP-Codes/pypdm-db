@@ -41,11 +41,11 @@ class @{TableName} :
 
 
     def __repr__(self) :
-        return "\n".join(
+        return "\\n".join(
             (
                 "%s: {" % self.table_name,
 @{kvs}
-                "}\n"
+                "}\\n"
             )
         )
 '''

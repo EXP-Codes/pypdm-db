@@ -63,9 +63,8 @@ twine upload dist/*
 python setup.py sdist
 
 安装
-cd .\dist\
-pip install .\pypdm-1.0.0.tar.gz
-
+pip install .\dist\pypdm-1.0.0.tar.gz
+pip uninstall pypdm
 
 ------
 
@@ -73,6 +72,7 @@ pip install .\pypdm-1.0.0.tar.gz
 
 
 pip install pymysql
+
 
 TODO: 通过启动参数决定是否 log.init() 使用内部日志
 
