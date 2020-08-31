@@ -11,7 +11,7 @@ DB_PATH =  'data/sqlite/test.db'
 DB_CONN = SqliteDBC(DB_PATH)
 
 
-class TestSimple(unittest.TestCase):
+class TestPypdmSqlite(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) :
@@ -31,7 +31,7 @@ class TestSimple(unittest.TestCase):
         rst = builder.build(
             dbtype = SQLITE,
             dbname = DB_PATH,
-            pdm_pkg = 'src.pdm.test',
+            pdm_pkg = 'src.pdm.sqlite',
             table_whitelist = [],
             table_blacklist = [ 't_employers', 't_employees' ],
             to_log = True
