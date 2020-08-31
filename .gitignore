@@ -17,5 +17,5 @@ __pycache__/
 # tests/tmp/
 
 # log
-log/
+# log/
 *.log
