@@ -161,7 +161,7 @@ setup(
     # If there are tpls files included in your packages that need to be
     # installed, specify them here.
     package_data={
-        'pypdm': ['pkg_data/bean.tpl', 'pkg_data/dao.tpl'],
+        # 'pypdm': ['pkg_data/bean.tpl', 'pkg_data/dao.tpl'],
     },  # Optional
 
     # Although 'package_data' is the preferred approach, in some case you may

@@ -9,7 +9,7 @@ import re
 import string
 import pkgutil
 
-from .assist.env import *
+from .assist.cfg import *
 from .assist import log
 from .dbc._mysql import MysqlDBC
 from .dbc._sqlite import SqliteDBC

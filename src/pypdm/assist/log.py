@@ -10,7 +10,7 @@ import traceback
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
-from .env import PRJ_DIR
+from .cfg import PRJ_DIR
 
 
 IS_INIT = False
