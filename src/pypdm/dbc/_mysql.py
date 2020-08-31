@@ -4,7 +4,7 @@
 # @Time   : 2020/4/29 22:14
 # @File   : _sqlite.py
 # -------------------------------
-# Mysql 数据库接口
+# Mysql 数据库连接器
 # -------------------------------
 
 import pymysql as pdbc
@@ -13,7 +13,7 @@ from ..assist import log
 
 class MysqlDBC :
     """
-    Mysql 数据库封装类
+    Mysql 数据库连接器
     """
 
     def __init__(self, host='127.0.0.1', port=3306, username='root', password='123456', dbname='test', charset='utf8') :
@@ -93,6 +93,14 @@ class MysqlDBC :
             except :
                 log.error("提交事务到数据库 [%s] 失败" % self.dbname)
         return is_ok
+
+
+    def cursor(self) :
+        """
+        返回数据库连接游标
+        :return: 游标（失败返回 None）
+        """
+        return self._conn.cursor() if self._conn else None
 
 
     def init(self, sql_script) :

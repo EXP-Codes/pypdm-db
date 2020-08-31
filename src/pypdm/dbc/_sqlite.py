@@ -4,7 +4,7 @@
 # @Time   : 2020/4/29 22:14
 # @File   : _sqlite.py
 # -----------------------------------------------
-# Sqlite 数据库接口
+# Sqlite 数据库连接器
 # -----------------------------------------------
 
 import sqlite3
@@ -13,7 +13,7 @@ from ..assist import log
 
 class SqliteDBC :
     """
-    Sqlite 数据库封装类
+    Sqlite 数据库连接器
     """
 
     def __init__(self, dbpath='test.db') :
@@ -82,7 +82,7 @@ class SqliteDBC :
     def cursor(self) :
         """
         返回数据库连接游标
-        :return: 游标
+        :return: 游标（失败返回 None）
         """
         return self._conn.cursor() if self._conn else None
 
