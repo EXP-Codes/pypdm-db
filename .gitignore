@@ -14,7 +14,7 @@ __pycache__/
 
 
 # unitest
-tests/tmp/
+# tests/tmp/
 
 # log
 log/

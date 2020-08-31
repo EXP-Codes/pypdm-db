@@ -22,8 +22,8 @@ class TestPypdmSqlite(unittest.TestCase):
     @classmethod
     def tearDownClass(cls) :
         DB_CONN.exec_script('data/rollback_db.sql')
-        if os.path.exists(CACHE_ROOT_DIR) :
-            shutil.rmtree(CACHE_ROOT_DIR)
+        # if os.path.exists(CACHE_ROOT_DIR) :
+        #     shutil.rmtree(CACHE_ROOT_DIR)
 
 
     def setUp(self) :
