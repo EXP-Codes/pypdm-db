@@ -15,7 +15,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 set -e
 
-echo "[Entrypoint] MySQL Docker Image 5.7.31-1.1.17"
+echo "[Entrypoint] MySQL Docker Image 5.6.49-1.1.17"
 # Fetch value from server config
 # We use mysqld --verbose --help instead of my_print_defaults because the
 # latter only show values present in config files, and not server defaults
@@ -73,10 +73,10 @@ if [ "$1" = 'mysqld' ]; then
 		chown -R mysql:mysql "$DATADIR"
 
 		echo '[Entrypoint] Initializing database'
-		"$@" --initialize-insecure
+		mysql_install_db --user=mysql --datadir="$DATADIR" --rpm --keep-my-cnf
 		echo '[Entrypoint] Database initialized'
 
-		"$@" --daemonize --skip-networking --socket="$SOCKET"
+		"$@" --skip-networking --socket="$SOCKET" &
 
 		# To avoid using password on commandline, put it in a temporary file.
 		# The file is only populated when and if the root password is set.
@@ -86,7 +86,7 @@ if [ "$1" = 'mysqld' ]; then
 		# "SET @@SESSION.SQL_LOG_BIN=0;" is required for products like group replication to work properly
 		mysql=( mysql --defaults-extra-file="$PASSFILE" --protocol=socket -uroot -hlocalhost --socket="$SOCKET" --init-command="SET @@SESSION.SQL_LOG_BIN=0;")
 
-		if [ ! -z "" ];
+		if [ ! -z "yes" ];
 		then
 			for i in {30..0}; do
 				if mysqladmin --socket="$SOCKET" ping &>/dev/null; then
@@ -101,16 +101,16 @@ if [ "$1" = 'mysqld' ]; then
 			fi
 		fi
 
-		mysql_tzinfo_to_sql /usr/share/zoneinfo | "${mysql[@]}" mysql
+		mysql_tzinfo_to_sql /usr/share/zoneinfo | sed 's/Local time zone must be set--see zic manual page/FCTY/' | "${mysql[@]}" mysql
 		
 		if [ ! -z "$MYSQL_RANDOM_ROOT_PASSWORD" ]; then
 			MYSQL_ROOT_PASSWORD="$(pwmake 128)"
 			echo "[Entrypoint] GENERATED ROOT PASSWORD: $MYSQL_ROOT_PASSWORD"
 		fi
 		if [ -z "$MYSQL_ROOT_HOST" ]; then
-			ROOTCREATE="ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';"
+			ROOTCREATE="SET PASSWORD FOR 'root'@'localhost'=PASSWORD('${MYSQL_ROOT_PASSWORD}');"
 		else
-			ROOTCREATE="ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}'; \
+			ROOTCREATE="SET PASSWORD FOR 'root'@'localhost'=PASSWORD('${MYSQL_ROOT_PASSWORD}'); \
 			CREATE USER 'root'@'${MYSQL_ROOT_HOST}' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}'; \
 			GRANT ALL ON *.* TO 'root'@'${MYSQL_ROOT_HOST}' WITH GRANT OPTION ; \
 			GRANT PROXY ON ''@'' TO 'root'@'${MYSQL_ROOT_HOST}' WITH GRANT OPTION ;"
@@ -201,7 +201,8 @@ password=healthcheckpass
 EOF
 	touch /mysql-init-complete
 	chown -R mysql:mysql "$DATADIR"
-	echo "[Entrypoint] Starting MySQL 5.7.31-1.1.17"
+	echo "[Entrypoint] Starting MySQL 5.6.49-1.1.17"
 fi
 
 exec "$@"
+
