@@ -7,7 +7,7 @@ import unittest
 from src.pypdm.assist.cfg import *
 from src.pypdm.dbc._sqlite import SqliteDBC
 
-DB_PATH =  'data/sqlite/test.db'
+DB_PATH =  'db/sqlite/test.db'
 DB_CONN = SqliteDBC(DB_PATH)
 CACHE_ROOT_DIR = 'tmp'
 
@@ -16,12 +16,12 @@ class TestPypdmSqlite(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) :
-        DB_CONN.exec_script('data/init_db.sql')
+        DB_CONN.exec_script('db/init_db.sql')
 
 
     @classmethod
     def tearDownClass(cls) :
-        DB_CONN.exec_script('data/rollback_db.sql')
+        DB_CONN.exec_script('db/rollback_db.sql')
         # if os.path.exists(CACHE_ROOT_DIR) :
         #     shutil.rmtree(CACHE_ROOT_DIR)
 
