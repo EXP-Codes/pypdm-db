@@ -67,8 +67,8 @@ class TestPypdmMysql(unittest.TestCase):
 
 
     def test_update(self) :
-        from tests.tmp.pdm.sqlite.bean.t_students import TStudents
-        from tests.tmp.pdm.sqlite.dao.t_students import TStudentsDao
+        from tests.tmp.pdm.mysql.bean.t_students import TStudents
+        from tests.tmp.pdm.mysql.dao.t_students import TStudentsDao
         table = TStudents()
         dao = TStudentsDao()
         where = { (table.i_id + ' = '): 1 }
@@ -87,8 +87,8 @@ class TestPypdmMysql(unittest.TestCase):
 
 
     def test_insert(self) :
-        from tests.tmp.pdm.sqlite.bean.t_students import TStudents
-        from tests.tmp.pdm.sqlite.dao.t_students import TStudentsDao
+        from tests.tmp.pdm.mysql.bean.t_students import TStudents
+        from tests.tmp.pdm.mysql.dao.t_students import TStudentsDao
         bean = TStudents()
         bean.name = 'exp'
         bean.remark = 'https://github.com/lyy289065406/pypdm'
@@ -99,8 +99,8 @@ class TestPypdmMysql(unittest.TestCase):
 
 
     def test_delete(self) :
-        from tests.tmp.pdm.sqlite.bean.t_students import TStudents
-        from tests.tmp.pdm.sqlite.dao.t_students import TStudentsDao
+        from tests.tmp.pdm.mysql.bean.t_students import TStudents
+        from tests.tmp.pdm.mysql.dao.t_students import TStudentsDao
         table = TStudents()
         dao = TStudentsDao()
         where = { (table.i_id + ' = '): 2 }
@@ -113,7 +113,7 @@ class TestPypdmMysql(unittest.TestCase):
 
 
     def test_query(self) :
-        from tests.tmp.pdm.sqlite.dao.t_teachers import TTeachersDao
+        from tests.tmp.pdm.mysql.dao.t_teachers import TTeachersDao
         dao = TTeachersDao()
         beans = dao.query_all(DB_CONN)
         self.assertEqual(len(beans), 3)
@@ -122,7 +122,7 @@ class TestPypdmMysql(unittest.TestCase):
 
 
     def test_truncate(self) :
-        from tests.tmp.pdm.sqlite.dao.t_teachers import TTeachersDao
+        from tests.tmp.pdm.mysql.dao.t_teachers import TTeachersDao
         dao = TTeachersDao()
         rownum = dao.count(DB_CONN)
         self.assertEqual(rownum, 3)

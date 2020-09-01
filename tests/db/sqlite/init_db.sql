@@ -1,25 +1,25 @@
 CREATE TABLE IF NOT EXISTS "t_teachers" (
 "i_id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 "s_name"  TEXT(16),
-"s_remark"  TEXT(32)
+"s_remark"  TEXT(64)
 );
 
 CREATE TABLE IF NOT EXISTS "t_students" (
 "i_id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 "s_name"  TEXT(16),
-"s_remark"  TEXT(32)
+"s_remark"  TEXT(64)
 );
 
 CREATE TABLE IF NOT EXISTS "t_employers" (
 "i_id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 "s_name"  TEXT(16),
-"s_remark"  TEXT(32)
+"s_remark"  TEXT(64)
 );
 
 CREATE TABLE IF NOT EXISTS "t_employees" (
 "i_id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 "s_name"  TEXT(16),
-"s_remark"  TEXT(32)
+"s_remark"  TEXT(64)
 );
 
 
