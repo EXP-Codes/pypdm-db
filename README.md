@@ -11,7 +11,7 @@
 
 ## 在线安装
 
-`pip install pypdm-exp`
+`pip install pypdm-db`
 
 ## 使用指引
 
@@ -51,10 +51,10 @@
 python setup.py sdist
 
 # 本地安装（测试用）
-pip install .\dist\pypdm-exp-1.0.0.tar.gz
+pip install .\dist\pypdm-db-?.?.?.tar.gz
 
 # 本地卸载
-pip uninstall pypdm-exp
+pip uninstall pypdm-db
 ```
 
 ### 项目发布
