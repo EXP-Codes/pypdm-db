@@ -82,3 +82,18 @@ sqlite 预编译语句的占位符是 ?
 
 mysql 没有默认主键列，因此生成的 dao 模板的 insert/update SQL 语句要去掉第一列
 sqlite 默认主键是隐藏自增列 rowid，因此生成的 dao 模板的 insert/update SQL 语句要保留第一列
+
+
+docker exec -it -u mysql 27492a40a39e /bin/bash
+mysql -uroot -p
+use mysql;
+select host, user from user;
+
+
+
+ #修改加密规则 （这行我没有写，不过貌似也可以）
+ALTER USER 'root'@'%' IDENTIFIED BY '123456' PASSWORD EXPIRE NEVER;
+#更新一下用户的密码
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
+#刷新权限
+FLUSH PRIVILEGES;
