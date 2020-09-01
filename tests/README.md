@@ -2,19 +2,59 @@
 
 ------
 
+## sqlite 测试
 
+- 数据库文件： [test.db](db/sqlite/test.db)
+- 初始化脚本： [init_db.sql](db/sqlite/init_db.sql)、[rollback_db.sql](db/sqlite/rollback_db.sql)
+- 单元测试脚本： `python ./test_pypdm_sqlite.py`
+
+
+## mysql 测试
+
+- docker 启动脚本： [run_docker_mysql.ps1](run_docker_mysql.ps1)、[run_docker_mysql.sh](run_docker_mysql.sh)
+- 数据挂载目录： [data](db/mysql/data)、[conf](db/mysql/conf)
+- 初始化脚本： [init_db.sql](db/mysql/init_db.sql)、[rollback_db.sql](db/mysql/rollback_db.sql)
+- 单元测试脚本： `python ./test_pypdm_mysql.py`
+
+
+## 关于临时数据
+
+### PDM 临时数据
+
+通过单元测试生成的 PDM 文件存储在 [tmp](tmp) 目录，该目录删除并不影响测试，保留纯粹方便核对生成的 PDM 内容。
+
+
+### sqlite 临时数据
+
+sqlite 使用的是 python3 自带的 sqlite3 数据库，测试库文件存储在 [test.db](db/sqlite/test.db)，删除该文件并不影响测试。
+
+
+### mysql 容器数据
+
+mysql 使用的是 mysql8 的官方镜像作为测试库，因为 mysql8 的加密规则不向前兼容、而且没有 test 数据库，直接使用该镜像对测试很不方便。故对数据库做了对应的调整，并挂载到 [data](db/mysql/data) 目录以便直接可以用于单元测试。
+
+若不慎删了 [data](db/mysql/data) 目录，可以通过以下步骤重新调整 mysql8 数据库：
 
 ```
-docker exec -it -u mysql 27492a40a39e /bin/bash
+# 拉取并运行 mysql8 镜像
+./run_docker_mysql.[sh|ps1]
+
+# 登入镜像
+docker exec -it -u mysql <容器ID> /bin/bash
+
+# 登陆数据库
 mysql -uroot -p
 use mysql;
-select host, user from user;
 
-
- #修改加密规则 （这行我没有写，不过貌似也可以）
+# 修改 root 用户加密规则 
 ALTER USER 'root'@'%' IDENTIFIED BY '123456' PASSWORD EXPIRE NEVER;
-#更新一下用户的密码
+
+# 更新 root 用户的密码
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
-#刷新权限
+
+# 刷新权限
 FLUSH PRIVILEGES;
+
+# 创建 test 数据库
+CREATE DATABASE IF NOT EXISTS test DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 ```
