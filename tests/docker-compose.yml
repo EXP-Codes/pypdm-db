@@ -8,7 +8,8 @@ version: '2'
 services:
   db:
     hostname: MYSQL
-    container_name: docker_mysql_5_6
+    image: expm02/mysql:5.6
+    container_name: mysql_5_6
     build:
       context: ./db/mysql/docker
       dockerfile: ./Dockerfile
