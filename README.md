@@ -27,7 +27,7 @@
 
 通过函数 `from src.pypdm.builder import build` 可生成指定数据表的 PDM 文件。
 
-例如数据库中已有表 `t_teachers` ，会在指定的 package 目录生成两个代码文件：
+例如数据库中已有表 [`t_teachers`](db/sqlite/init_db.sql) ，会在指定的 package 目录生成两个代码文件：
 
 - Bean 文件： [*/bean/t_teachers.py](tests/tmp/pdm/sqlite/bean/t_teachers.py)
 - DAO 文件：  [*/dao/t_teachers.py](tests/tmp/pdm/sqlite/dao/t_teachers.py)
