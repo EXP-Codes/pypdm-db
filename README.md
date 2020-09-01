@@ -96,7 +96,3 @@ twine upload dist/*
 
 </details>
 
-## 备注
-
-本项目纯属学习用途，从便利性来看推荐使用 [pymysql](https://github.com/PyMySQL/PyMySQL) 代替
-
