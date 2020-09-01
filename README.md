@@ -55,30 +55,20 @@ password = <password>
 其次安装 twine 并上传项目： 
 
 ```
-# 只需首次安装
+# 首次发布需安装
 pip install twine
 
 # 发布项目， 若发布成功可在此查看 https://pypi.org/manage/projects/
 twine upload dist/*
 ```
 
-> 发布到 [PyPI](https://pypi.org/) 的项目名称必须是全局唯一的，即若其他用户已使用该项目名称，则无法发布（报错：`The user 'xxx' isn't allowed to upload to project 'yyy'.`）。此时只能通过修改 [`setup.py`](setup.py) 下的项目名称 `name`。
+> 发布到 [PyPI](https://pypi.org/) 的项目名称必须是全局唯一的，即若其他用户已使用该项目名称，则无法发布（报错：`The user 'xxx' isn't allowed to upload to project 'yyy'.`）。此时只能修改 [`setup.py`](setup.py) 下的项目名称 `name`。
 
 
 ### 关于测试
 
-docker exec -it -u mysql 27492a40a39e /bin/bash
-mysql -uroot -p
-use mysql;
-select host, user from user;
+详见 [测试说明](tests)
 
-
- #修改加密规则 （这行我没有写，不过貌似也可以）
-ALTER USER 'root'@'%' IDENTIFIED BY '123456' PASSWORD EXPIRE NEVER;
-#更新一下用户的密码
-ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
-#刷新权限
-FLUSH PRIVILEGES;
 
 ### 参考资料
 
