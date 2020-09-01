@@ -54,7 +54,7 @@ class BaseDao:
         is_ok = False
         try:
             cursor = conn.cursor()
-            cursor.execute(self.SQL_TRUNCATE)
+            cursor.execute(self.SQL_TRUNCATE if conn.dbtype() == MYSQL else self.SQL_DELETE)
             conn.commit()
             cursor.close()
             is_ok = True

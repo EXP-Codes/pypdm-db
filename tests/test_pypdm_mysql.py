@@ -66,15 +66,6 @@ class TestPypdmMysql(unittest.TestCase):
         self.assertTrue('tmp/pdm/sqlite/dao/t_students.py' in paths)
 
 
-    def test_query(self) :
-        from tests.tmp.pdm.sqlite.dao.t_teachers import TTeachersDao
-        dao = TTeachersDao()
-        beans = dao.query_all(DB_CONN)
-        self.assertEqual(len(beans), 3)
-        # for bean in beans :
-        #     print(bean)
-
-
     def test_update(self) :
         from tests.tmp.pdm.sqlite.bean.t_students import TStudents
         from tests.tmp.pdm.sqlite.dao.t_students import TStudentsDao
@@ -98,7 +89,6 @@ class TestPypdmMysql(unittest.TestCase):
     def test_insert(self) :
         from tests.tmp.pdm.sqlite.bean.t_students import TStudents
         from tests.tmp.pdm.sqlite.dao.t_students import TStudentsDao
-
         bean = TStudents()
         bean.name = 'exp'
         bean.remark = 'https://github.com/lyy289065406/pypdm'
@@ -121,6 +111,26 @@ class TestPypdmMysql(unittest.TestCase):
         self.assertTrue(is_ok)
         self.assertEqual(before_rownum - 1, after_rownum)
 
+
+    def test_query(self) :
+        from tests.tmp.pdm.sqlite.dao.t_teachers import TTeachersDao
+        dao = TTeachersDao()
+        beans = dao.query_all(DB_CONN)
+        self.assertEqual(len(beans), 3)
+        # for bean in beans :
+        #     print(bean)
+
+
+    def test_truncate(self) :
+        from tests.tmp.pdm.sqlite.dao.t_teachers import TTeachersDao
+        dao = TTeachersDao()
+        rownum = dao.count(DB_CONN)
+        self.assertEqual(rownum, 3)
+
+        is_ok = dao.truncate(DB_CONN)
+        rownum = dao.count(DB_CONN)
+        self.assertTrue(is_ok)
+        self.assertEqual(rownum, 0)
 
 
 if __name__ == '__main__':
