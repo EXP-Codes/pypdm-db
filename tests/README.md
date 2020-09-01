@@ -2,6 +2,8 @@
 
 ------
 
+
+
 ```
 docker exec -it -u mysql 27492a40a39e /bin/bash
 mysql -uroot -p

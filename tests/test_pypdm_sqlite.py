@@ -1,6 +1,12 @@
 # the inclusion of the tests module is not meant to offer best practices for
 # testing in general, but rather to support the `find_packages` example in
 # setup.py that excludes installing the "tests" package
+# ----------------------------------------------------------------------
+# 把父级目录（项目根目录）添加到工作路径，以便在终端也可以执行单元测试
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
+# ----------------------------------------------------------------------
 
 import shutil
 import unittest

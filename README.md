@@ -6,7 +6,7 @@
 
 ## 运行环境
 
-![](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg)
+![](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg) ![](https://img.shields.io/badge/PyCharm-4.0.4%2B-brightgreen.svg)
 
 
 ## 在线安装
