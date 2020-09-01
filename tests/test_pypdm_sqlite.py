@@ -16,12 +16,12 @@ class TestPypdmSqlite(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) :
-        DB_CONN.exec_script('db/init_db.sql')
+        DB_CONN.exec_script('db/sqlite/init_db.sql')
 
 
     @classmethod
     def tearDownClass(cls) :
-        DB_CONN.exec_script('db/rollback_db.sql')
+        DB_CONN.exec_script('db/sqlite/rollback_db.sql')
         # if os.path.exists(CACHE_ROOT_DIR) :
         #     shutil.rmtree(CACHE_ROOT_DIR)
 

@@ -7,17 +7,17 @@ import unittest
 from src.pypdm.assist.cfg import *
 from src.pypdm.dbc._mysql import MysqlDBC
 
-HOST = '127.0.0.1',
-PORT = 3306,
-USERNAME = 'root',
-PASSWORD = '123456',
-DB_NAME = 'pypdm',
+HOST = '127.0.0.1'
+PORT = 3306
+USERNAME = 'root'
+PASSWORD = '123456'
+DB_NAME = 'test'
 DB_CONN = MysqlDBC(host = HOST,
             port = PORT,
             username = USERNAME,
             password = PASSWORD,
             dbname = DB_NAME,
-            charset = CHARSET
+            charset = CHARSET_DB
 )
 CACHE_ROOT_DIR = 'tmp'
 
@@ -26,12 +26,12 @@ class TestPypdmMysql(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) :
-        DB_CONN.exec_script('data/init_db.sql')
+        DB_CONN.exec_script('db/mysql/init_db.sql')
 
 
     @classmethod
     def tearDownClass(cls) :
-        DB_CONN.exec_script('data/rollback_db.sql')
+        DB_CONN.exec_script('db/mysql/rollback_db.sql')
         # if os.path.exists(CACHE_ROOT_DIR) :
         #     shutil.rmtree(CACHE_ROOT_DIR)
 
@@ -53,17 +53,17 @@ class TestPypdmMysql(unittest.TestCase):
             username = USERNAME,
             password = PASSWORD,
             dbname = DB_NAME,
-            charset = CHARSET,
+            charset = CHARSET_DB,
             pdm_pkg = CACHE_ROOT_DIR + '.pdm.mysql',
             table_whitelist = [ 't_teachers', 't_students' ],
             table_blacklist = [ 't_employers', 't_employees' ],
             to_log = True
         )
         self.assertEqual(len(paths), 4)
-        self.assertTrue('tmp/pdm/sqlite/bean/t_teachers.py' in paths)
-        self.assertTrue('tmp/pdm/sqlite/dao/t_teachers.py' in paths)
-        self.assertTrue('tmp/pdm/sqlite/bean/t_students.py' in paths)
-        self.assertTrue('tmp/pdm/sqlite/dao/t_students.py' in paths)
+        self.assertTrue('tmp/pdm/mysql/bean/t_teachers.py' in paths)
+        self.assertTrue('tmp/pdm/mysql/dao/t_teachers.py' in paths)
+        self.assertTrue('tmp/pdm/mysql/bean/t_students.py' in paths)
+        self.assertTrue('tmp/pdm/mysql/dao/t_students.py' in paths)
 
 
     def test_update(self) :

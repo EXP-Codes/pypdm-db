@@ -17,7 +17,7 @@ class MysqlDBC :
     Mysql 数据库连接器
     """
 
-    def __init__(self, host='127.0.0.1', port=3306, username='root', password='123456', dbname='test', charset='utf8') :
+    def __init__(self, host='127.0.0.1', port=3306, username='root', password='123456', dbname='test', charset=CHARSET_DB) :
         """
         构造函数
         :param host : 数据库地址
