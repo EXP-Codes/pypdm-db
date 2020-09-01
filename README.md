@@ -4,91 +4,73 @@
 
 ------
 
-[Python Packaging User Guide](https://packaging.python.org/#python-packaging-user-guide)
-[PyPA sample project](https://github.com/pypa/sampleproject)
+## 运行环境
 
-## 程序打包
+![](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg)
 
-通过执行下列语句来进行打包：
+
+## 在线安装
+
+`pip install pypdm-exp`
+
+## 使用指引
+
+
+
+## 开发者说明
+
+<details>
+<summary>展开</summary>
+<br/>
+
+### 项目打包
+
+每次修改代码后，记得同步修改 [`setup.py`](setup.py) 下的版本号 `version='x.y.z'`。
 
 ```
-python setup.py xxx
+# 构建用于发布到 PyPI 的压缩包
+python setup.py sdist
+
+# 本地安装（测试用）
+pip install .\dist\pypdm-exp-1.0.0.tar.gz
+
+# 本地卸载
+pip uninstall pypdm-exp
 ```
 
-其中xxx可以是下列几种方式中其中一个：
+### 项目发布
 
-- sdist             create a source distribution (tarball, zip file, etc.)
-- bdist             create a built (binary) distribution
-- bdist_dumb        create a "dumb" built distribution
-- bdist_rpm         create an RPM distribution
-- bdist_wininst     create an executable installer for MS Windows
-- bdist_egg         create an "egg" distribution
-
-举个例子：
-
-```
-python setup.py sdist　#生成的文件支持 pip
-```
-
-此时在根目录出现了dist文件夹，里面有name-version.tar.gz这个文件，这就是我们要发布到PyPI的压缩包了。
-
-
-## 发布到PyPI
-
-首先我们需要在PyPI上注册一个帐号，并在本地用户根目录下创建文件 `~/.pypirc`，这样以后就不需要输入帐号密码了。
+首先需要在 [PyPI](https://pypi.org/) 上注册一个帐号，并在本地用户根目录下创建文件 `~/.pypirc`（用于发布时验证用户身份），其内容如下：
 
 ```
 [distutils]
 index-servers=pypi
 
 [pypi]
-repository = https://pypi.python.org/pypi
+repository = https://upload.pypi.org/legacy/
 username = <username>
 password = <password>
 ```
 
-接下来，需要在PyPI网站上注册一个项目，网站提供三种方式注册，选择一种即可，最简单的是通过上传打包时生成的PKG-INFO文件，生成项目信息。此步骤只需在第一次发布时操作。
-
-接下来就是最后一步，上传打包好的库。我们这里是用twine，如果环境中没有安装，需要先采用 `pip install twine` 安装即可。
+其次安装 twine 并上传项目： 
 
 ```
+# 只需首次安装
+pip install twine
+
+# 发布项目， 若发布成功可在此查看 https://pypi.org/manage/projects/
 twine upload dist/*
 ```
 
-此时在网页上就可以看到自己的源代码包啦，并且可以通过使用 `pip install <packagename>` ,就可以使用我们自己写的Python库了。
-
-------
-
-本地打包：
-python setup.py sdist
-
-安装
-pip install .\dist\pypdm-1.0.0.tar.gz
-pip uninstall pypdm
-
-------
-
-推荐使用 https://github.com/PyMySQL/PyMySQL
+> 发布到 [PyPI](https://pypi.org/) 的项目名称必须是全局唯一的，即若其他用户已使用该项目名称，则无法发布（报错：`The user 'xxx' isn't allowed to upload to project 'yyy'.`）。此时只能通过修改 [`setup.py`](setup.py) 下的项目名称 `name`。
 
 
-pip install pymysql
-
-
-TODO: 通过启动参数决定是否 log.init() 使用内部日志
-
-
-mysql 预编译语句的占位符是 %s
-sqlite 预编译语句的占位符是 ?
-
-mysql 没有默认主键列，因此生成的 dao 模板的 insert/update SQL 语句要去掉第一列
-sqlite 默认主键是隐藏自增列 rowid，因此生成的 dao 模板的 insert/update SQL 语句要保留第一列
-
+### 关于测试
 
 docker exec -it -u mysql 27492a40a39e /bin/bash
 mysql -uroot -p
 use mysql;
 select host, user from user;
-
 
 
  #修改加密规则 （这行我没有写，不过貌似也可以）
@@ -97,3 +79,15 @@ ALTER USER 'root'@'%' IDENTIFIED BY '123456' PASSWORD EXPIRE NEVER;
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
 #刷新权限
 FLUSH PRIVILEGES;
+
+### 参考资料
+
+- [python package 开发指引](https://packaging.python.org/#python-packaging-user-guide)
+- [python package 示例代码](https://github.com/pypa/sampleproject)
+
+</details>
+
+## 备注
+
+本项目纯属学习用途，从便利性来看推荐使用 [pymysql](https://github.com/PyMySQL/PyMySQL) 代替
+
