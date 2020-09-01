@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1949b09-79f1-451c-958b-045a43e53023" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/db/sqlite/test.db" afterPath="$PROJECT_DIR$/tests/db/sqlite/test.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/db/sqlite/init_db.sql" afterPath="$PROJECT_DIR$/tests/db/sqlite/init_db.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_pypdm_mysql.py" afterPath="$PROJECT_DIR$/tests/test_pypdm_mysql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/run_docker_mysql.ps1" afterPath="$PROJECT_DIR$/tests/run_docker_mysql.ps1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/run_docker_mysql.sh" afterPath="$PROJECT_DIR$/tests/run_docker_mysql.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pypdm.iws" />
@@ -50,14 +49,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test_pypdm_mysql.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_pypdm_mysql.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_pypdm_mysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68802226" vertical-offset="1311" max-vertical-offset="2774">
-              <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
+            <state vertical-scroll-proportion="-5.4745765" vertical-offset="1311" max-vertical-offset="2774">
+              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
                 <element signature="e#209#222#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_docker_mysql.ps1" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/run_docker_mysql.ps1">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.02486911" vertical-offset="0" max-vertical-offset="764">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_docker_mysql.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/run_docker_mysql.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="133">
+              <caret line="1" column="53" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="166" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,8 +210,6 @@
         <option value="$PROJECT_DIR$/src/pypdm/assist/cfg.py" />
         <option value="$PROJECT_DIR$/src/pypdm/dbc/_mysql.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/tests/run_docker_mysql.sh" />
-        <option value="$PROJECT_DIR$/tests/run_docker_mysql.ps1" />
         <option value="$PROJECT_DIR$/tests/db/create_db.sql" />
         <option value="$PROJECT_DIR$/tests/test_pypdm_sqlite.py" />
         <option value="$PROJECT_DIR$/tests/db/mysql/rollback_db.sql" />
@@ -200,6 +217,8 @@
         <option value="$PROJECT_DIR$/tests/db/mysql/init_db.sql" />
         <option value="$PROJECT_DIR$/tests/db/sqlite/init_db.sql" />
         <option value="$PROJECT_DIR$/tests/test_pypdm_mysql.py" />
+        <option value="$PROJECT_DIR$/tests/run_docker_mysql.sh" />
+        <option value="$PROJECT_DIR$/tests/run_docker_mysql.ps1" />
       </list>
     </option>
   </component>
@@ -358,72 +377,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dbc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pypdm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -819,7 +772,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="63" width="1491" height="1310" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1130,26 +1083,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/run_docker_mysql.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="133">
-          <caret line="1" column="84" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="179" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://S:/04_work/python/python38/Lib/site-packages/pymysql/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="2584">
           <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/run_docker_mysql.ps1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="133">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1252,11 +1189,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_pypdm_mysql.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68802226" vertical-offset="1311" max-vertical-offset="2774">
-          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
+        <state vertical-scroll-proportion="-5.4745765" vertical-offset="1311" max-vertical-offset="2774">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
             <element signature="e#209#222#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/run_docker_mysql.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="133">
+          <caret line="1" column="53" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="166" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/run_docker_mysql.ps1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02486911" vertical-offset="0" max-vertical-offset="764">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
