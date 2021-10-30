@@ -22,10 +22,10 @@
 
 通过以下函数可生成对应数据库的连接对象：
 
-- `from src.pypdm.dbc._sqlite import SqliteDBC`
-- `from src.pypdm.dbc._mysql import MysqlDBC`
+- `from pypdm.dbc._sqlite import SqliteDBC`
+- `from pypdm.dbc._mysql import MysqlDBC`
 
-通过函数 `from src.pypdm.builder import build` 可生成指定数据表的 PDM 文件。
+通过函数 `from pypdm.builder import build` 可生成指定数据表的 PDM 文件。
 
 例如数据库中已有表 [`t_teachers`](tests/db/sqlite/init_db.sql) ，会在指定的 package 目录生成两个代码文件：
 
