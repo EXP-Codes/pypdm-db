@@ -163,7 +163,7 @@ class PDM :
             self._create_init_py(filedir)
 
         path = '%s%s%s' % (filedir, filename, suffix)
-        with open(path, 'w+') as file :
+        with open(path, 'w+', encoding=CHARSET) as file :
             file.write(content)
         return path
 
@@ -176,7 +176,7 @@ class PDM :
         dir = pkg_dir
         while dir :
             initpy_path = '%s/__init__.py' % dir
-            with open(initpy_path, 'w+') as file : file.write('')
+            with open(initpy_path, 'w+', encoding=CHARSET) as file : file.write('')
             dir = os.path.dirname(dir)
 
 

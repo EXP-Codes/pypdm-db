@@ -121,7 +121,7 @@ class MysqlDBC :
         is_ok = False
         if self.conn() :
             try :
-                with open(filepath, "r") as file :
+                with open(filepath, "r", encoding=CHARSET) as file :
                     data = file.read()
 
                     cursor = self._conn.cursor()
