@@ -8,6 +8,7 @@
 import re
 import string
 from .assist.cfg import *
+from .assist.num import *
 from .assist import log
 
 
@@ -63,7 +64,7 @@ class PDM :
                     table_name = row[0]
                     if table_name == 'sqlite_sequence' :    # sqlite 内置自增序列表
                         continue
-                tables.append(table_name)
+                tables.append(byte_to_str(table_name))
             cursor.close()
         except:
             log.error("查询 table 列表失败")
