@@ -101,7 +101,7 @@ twine upload dist/*
 
 | 支付宝 | 微信 |
 |:---:|:---:|
-| ![](docs/imgs/alipay.png) | ![](docs/imgs/wechat.png) |
+| ![](https://github.com/lyy289065406/pypdm/blob/master/imgs/donate-alipay.png) | ![](https://github.com/lyy289065406/pypdm/blob/master/imgs/donate-wechat.png) |
 
 
 ## 版权声明

@@ -22,7 +22,7 @@ class SqliteDBC :
         构造函数
         :param dbname : 数据库路径
         """
-        self.dbpath = dbpath
+        self.dbpath = dbpath or 'test.db'
         self._conn = None
 
 

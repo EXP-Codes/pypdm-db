@@ -27,12 +27,12 @@ class MysqlDBC :
         :param dbname : 数据库名称
         :param charset : 数据库编码
         """
-        self.host = host
-        self.port = port
-        self.username = username
-        self.password = password
-        self.dbname = dbname
-        self.charset = charset
+        self.host = host or '127.0.0.1'
+        self.port = port or 3306
+        self.username = username or 'root'
+        self.password = password or '123456'
+        self.dbname = dbname or 'test'
+        self.charset = (CHARSET_DB if charset.lower() == CHARSET else charset) or CHARSET_DB
         self._conn = None
 
 
