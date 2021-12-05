@@ -28,12 +28,12 @@ class MysqlDBC :
         :param encoding : 数据库编码
         :param options : 上述所有数据库参数的字典，方便传参
         """
-        self.host = host or options.get('host') or '127.0.0.1'
-        self.port = port or options.get('port') or 3306
-        self.username = username or options.get('username') or 'root'
-        self.password = password or options.get('password') or '123456'
-        self.dbname = dbname or options.get('dbname') or 'test'
-        self.encoding = encoding or options.get('encoding') or ENCODING
+        self.host = options.get('host') or host or '127.0.0.1'
+        self.port = options.get('port') or port or 3306
+        self.username = options.get('username') or username or 'root'
+        self.password = options.get('password') or password or '123456'
+        self.dbname = options.get('dbname') or dbname or 'test'
+        self.encoding = options.get('encoding') or encoding or ENCODING
         self.encoding = (ENCODING if encoding.lower() == CHARSET else encoding)
         self._conn = None
 
