@@ -17,7 +17,7 @@ PRJ_DIR = os.path.dirname(
 )
 
 CHARSET = 'utf-8'
-CHARSET_DB = 'utf8'
+ENCODING = 'utf8'
 MYSQL = 'mysql'
 SQLITE = 'sqlite'
 

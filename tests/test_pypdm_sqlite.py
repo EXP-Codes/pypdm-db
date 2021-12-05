@@ -14,7 +14,7 @@ from src.pypdm.assist.cfg import *
 from src.pypdm.dbc._sqlite import SqliteDBC
 
 DB_PATH =  'db/sqlite/test.db'
-DB_CONN = SqliteDBC(DB_PATH)
+S_DBC = SqliteDBC(DB_PATH)
 CACHE_ROOT_DIR = 'tmp'
 
 
@@ -22,29 +22,28 @@ class TestPypdmSqlite(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) :
-        DB_CONN.exec_script('db/sqlite/init_db.sql')
+        S_DBC.exec_script('db/sqlite/init_db.sql')
 
 
     @classmethod
     def tearDownClass(cls) :
-        DB_CONN.exec_script('db/sqlite/rollback_db.sql')
+        S_DBC.exec_script('db/sqlite/rollback_db.sql')
         # if os.path.exists(CACHE_ROOT_DIR) :
         #     shutil.rmtree(CACHE_ROOT_DIR)
 
 
     def setUp(self) :
-        DB_CONN.conn()
+        S_DBC.conn()
 
 
     def tearDown(self) :
-        DB_CONN.close()
+        S_DBC.close()
 
 
     def test_build_pdm(self) :
         from src.pypdm.builder import build
         paths = build(
-            dbtype = SQLITE,
-            dbname = DB_PATH,
+            dbc = S_DBC,
             pdm_pkg = CACHE_ROOT_DIR + '.pdm.sqlite',
             table_whitelist = [ 't_teachers', 't_students' ],
             table_blacklist = [ 't_employers', 't_employees' ],
@@ -65,14 +64,14 @@ class TestPypdmSqlite(unittest.TestCase):
         where = { (table.i_id + ' = '): 1 }
 
         # before
-        bean = dao.query_one(DB_CONN, where)
+        bean = dao.query_one(S_DBC, where)
         bean.name = 'EXP'
         bean.remark = '289065406@qq.com'
-        is_ok = dao.update(DB_CONN, bean)
+        is_ok = dao.update(S_DBC, bean)
         self.assertTrue(is_ok)
 
         # after
-        bean = dao.query_one(DB_CONN, where)
+        bean = dao.query_one(S_DBC, where)
         self.assertEqual(bean.name.decode(CHARSET), 'EXP')
         self.assertEqual(bean.remark.decode(CHARSET), '289065406@qq.com')
 
@@ -85,7 +84,7 @@ class TestPypdmSqlite(unittest.TestCase):
         bean.remark = 'https://github.com/lyy289065406/pypdm'
 
         dao = TStudentsDao()
-        is_ok = dao.insert(DB_CONN, bean)
+        is_ok = dao.insert(S_DBC, bean)
         self.assertTrue(is_ok)
 
 
@@ -96,9 +95,9 @@ class TestPypdmSqlite(unittest.TestCase):
         dao = TStudentsDao()
         where = { (table.i_id + ' = '): 2 }
 
-        before_rownum = dao.count(DB_CONN)
-        is_ok = dao.delete(DB_CONN, where)
-        after_rownum = dao.count(DB_CONN)
+        before_rownum = dao.count(S_DBC)
+        is_ok = dao.delete(S_DBC, where)
+        after_rownum = dao.count(S_DBC)
         self.assertTrue(is_ok)
         self.assertEqual(before_rownum - 1, after_rownum)
 
@@ -106,7 +105,7 @@ class TestPypdmSqlite(unittest.TestCase):
     def test_query(self) :
         from tests.tmp.pdm.sqlite.dao.t_teachers import TTeachersDao
         dao = TTeachersDao()
-        beans = dao.query_all(DB_CONN)
+        beans = dao.query_all(S_DBC)
         self.assertEqual(len(beans), 3)
         # for bean in beans :
         #     print(bean)
@@ -115,11 +114,11 @@ class TestPypdmSqlite(unittest.TestCase):
     def test_truncate(self) :
         from tests.tmp.pdm.sqlite.dao.t_teachers import TTeachersDao
         dao = TTeachersDao()
-        rownum = dao.count(DB_CONN)
+        rownum = dao.count(S_DBC)
         self.assertEqual(rownum, 3)
 
-        is_ok = dao.truncate(DB_CONN)
-        rownum = dao.count(DB_CONN)
+        is_ok = dao.truncate(S_DBC)
+        rownum = dao.count(S_DBC)
         self.assertTrue(is_ok)
         self.assertEqual(rownum, 0)
 

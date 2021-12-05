@@ -18,12 +18,12 @@ PORT = 3306
 USERNAME = 'root'
 PASSWORD = '123456'
 DB_NAME = 'test'
-DB_CONN = MysqlDBC(host = HOST,
+M_DBC = MysqlDBC(host = HOST,
             port = PORT,
             username = USERNAME,
             password = PASSWORD,
             dbname = DB_NAME,
-            charset = CHARSET_DB
+            encoding = ENCODING
 )
 CACHE_ROOT_DIR = 'tmp'
 
@@ -32,34 +32,28 @@ class TestPypdmMysql(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) :
-        DB_CONN.exec_script('db/mysql/init_db.sql')
+        M_DBC.exec_script('db/mysql/init_db.sql')
 
 
     @classmethod
     def tearDownClass(cls) :
-        DB_CONN.exec_script('db/mysql/rollback_db.sql')
+        M_DBC.exec_script('db/mysql/rollback_db.sql')
         # if os.path.exists(CACHE_ROOT_DIR) :
         #     shutil.rmtree(CACHE_ROOT_DIR)
 
 
     def setUp(self) :
-        DB_CONN.conn()
+        M_DBC.conn()
 
 
     def tearDown(self) :
-        DB_CONN.close()
+        M_DBC.close()
 
 
     def test_build_pdm(self) :
         from src.pypdm.builder import build
         paths = build(
-            dbtype = MYSQL,
-            host = HOST,
-            port = PORT,
-            username = USERNAME,
-            password = PASSWORD,
-            dbname = DB_NAME,
-            charset = CHARSET_DB,
+            dbc = M_DBC,
             pdm_pkg = CACHE_ROOT_DIR + '.pdm.mysql',
             table_whitelist = [ 't_teachers', 't_students' ],
             table_blacklist = [ 't_employers', 't_employees' ],
@@ -80,14 +74,14 @@ class TestPypdmMysql(unittest.TestCase):
         where = { (table.i_id + ' = '): 1 }
 
         # before
-        bean = dao.query_one(DB_CONN, where)
+        bean = dao.query_one(M_DBC, where)
         bean.name = 'EXP'
         bean.remark = '289065406@qq.com'
-        is_ok = dao.update(DB_CONN, bean)
+        is_ok = dao.update(M_DBC, bean)
         self.assertTrue(is_ok)
 
         # after
-        bean = dao.query_one(DB_CONN, where)
+        bean = dao.query_one(M_DBC, where)
         self.assertEqual(bean.name.decode(CHARSET), 'EXP')
         self.assertEqual(bean.remark.decode(CHARSET), '289065406@qq.com')
 
@@ -100,7 +94,7 @@ class TestPypdmMysql(unittest.TestCase):
         bean.remark = 'https://github.com/lyy289065406/pypdm'
 
         dao = TStudentsDao()
-        is_ok = dao.insert(DB_CONN, bean)
+        is_ok = dao.insert(M_DBC, bean)
         self.assertTrue(is_ok)
 
 
@@ -111,9 +105,9 @@ class TestPypdmMysql(unittest.TestCase):
         dao = TStudentsDao()
         where = { (table.i_id + ' = '): 2 }
 
-        before_rownum = dao.count(DB_CONN)
-        is_ok = dao.delete(DB_CONN, where)
-        after_rownum = dao.count(DB_CONN)
+        before_rownum = dao.count(M_DBC)
+        is_ok = dao.delete(M_DBC, where)
+        after_rownum = dao.count(M_DBC)
         self.assertTrue(is_ok)
         self.assertEqual(before_rownum - 1, after_rownum)
 
@@ -121,7 +115,7 @@ class TestPypdmMysql(unittest.TestCase):
     def test_query(self) :
         from tests.tmp.pdm.mysql.dao.t_teachers import TTeachersDao
         dao = TTeachersDao()
-        beans = dao.query_all(DB_CONN)
+        beans = dao.query_all(M_DBC)
         self.assertEqual(len(beans), 3)
         # for bean in beans :
         #     print(bean)
@@ -130,11 +124,11 @@ class TestPypdmMysql(unittest.TestCase):
     def test_truncate(self) :
         from tests.tmp.pdm.mysql.dao.t_teachers import TTeachersDao
         dao = TTeachersDao()
-        rownum = dao.count(DB_CONN)
+        rownum = dao.count(M_DBC)
         self.assertEqual(rownum, 3)
 
-        is_ok = dao.truncate(DB_CONN)
-        rownum = dao.count(DB_CONN)
+        is_ok = dao.truncate(M_DBC)
+        rownum = dao.count(M_DBC)
         self.assertTrue(is_ok)
         self.assertEqual(rownum, 0)
 

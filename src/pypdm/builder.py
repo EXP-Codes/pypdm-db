@@ -12,7 +12,7 @@ from ._pdm import *
 
 
 
-def build(
+def build_deprecated(
         dbtype = 'sqlite',
         host = '127.0.0.1',
         port = 3306,
@@ -26,7 +26,7 @@ def build(
         to_log = False
     ) :
     '''
-    构造指定数据库的 PDM 对象文件
+    构造指定数据库的 PDM 对象文件（不再推荐使用）
     :param dbtype: 数据库类型，只支持 sqlite 或 mysql
     :param host: 数据库 IP
     :param port: 数据库端口
@@ -40,11 +40,31 @@ def build(
     :param to_log: 是否启用内部日志
     :return:
     '''
+    dbc = _connect_to_db(dbtype, host, port, username, password, dbname, charset)
+    return build(dbc, pdm_pkg, table_whitelist, table_blacklist, to_log)
+
+
+
+def build(
+        dbc = None, 
+        pdm_pkg = 'src.pdm',
+        table_whitelist = [],
+        table_blacklist = [],
+        to_log = False
+    ) :
+    '''
+    构造指定数据库的 PDM 对象文件
+    :param dbc: 数据库连接对象
+    :param pdm_pkg: 期望生成 PDM 文件的包路径
+    :param table_whitelist: 要生成哪些表的 PDM 文件（默认所有表）
+    :param table_blacklist: 不生成哪些表的 PDM 文件
+    :param to_log: 是否启用内部日志
+    :return:
+    '''
     if to_log :
         log.init()
 
     paths = []
-    dbc = _connect_to_db(dbtype, host, port, username, password, dbname, charset)
     if dbc :
         log.info('正在构造数据表 PDM ...')
         pdm = PDM(dbc, pdm_pkg)

@@ -17,7 +17,7 @@ class MysqlDBC :
     Mysql 数据库连接器
     """
 
-    def __init__(self, host='127.0.0.1', port=3306, username='root', password='123456', dbname='test', charset=CHARSET_DB) :
+    def __init__(self, host='127.0.0.1', port=3306, username='root', password='123456', dbname='test', encoding=ENCODING, options={}) :
         """
         构造函数
         :param host : 数据库地址
@@ -25,14 +25,16 @@ class MysqlDBC :
         :param username : 数据库账号
         :param password : 数据库密码
         :param dbname : 数据库名称
-        :param charset : 数据库编码
+        :param encoding : 数据库编码
+        :param options : 上述所有数据库参数的字典，方便传参
         """
-        self.host = host or '127.0.0.1'
-        self.port = port or 3306
-        self.username = username or 'root'
-        self.password = password or '123456'
-        self.dbname = dbname or 'test'
-        self.charset = (CHARSET_DB if charset.lower() == CHARSET else charset) or CHARSET_DB
+        self.host = host or options.get('host') or '127.0.0.1'
+        self.port = port or options.get('port') or 3306
+        self.username = username or options.get('username') or 'root'
+        self.password = password or options.get('password') or '123456'
+        self.dbname = dbname or options.get('dbname') or 'test'
+        self.encoding = encoding or options.get('encoding') or ENCODING
+        self.encoding = (ENCODING if encoding.lower() == CHARSET else encoding)
         self._conn = None
 
 
@@ -57,7 +59,7 @@ class MysqlDBC :
                     user = self.username,
                     password = self.password,
                     db = self.dbname,
-                    charset = self.charset
+                    charset = self.encoding
                 )
             except :
                 log.error("连接数据库 [%s] 失败" % self.dbname)
