@@ -13,7 +13,7 @@ import unittest
 from src.pypdm.assist.cfg import *
 from src.pypdm.dbc._sqlite import SqliteDBC
 
-DB_PATH =  'db/sqlite/test.db'
+DB_PATH =  'db/sqlite/data/test.db'
 S_DBC = SqliteDBC(DB_PATH)
 CACHE_ROOT_DIR = 'tmp'
 
