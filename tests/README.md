@@ -15,6 +15,7 @@
 - 数据挂载目录： [data](db/mysql/data)
 - 初始化脚本： [init_db.sql](db/mysql/init_db.sql)、[rollback_db.sql](db/mysql/rollback_db.sql)
 - 单元测试脚本： `python ./test_pypdm_mysql.py`
+- docker 停止脚本： [docker-compose down](docker-compose.yml)
 
 
 ## 关于临时数据
@@ -34,5 +35,7 @@ sqlite 使用的是 python3 自带的 sqlite3 数据库，测试库文件存储�
 mysql 使用的是 docker 的 mariadb 数据库，测试库文件存储在 [data](db/mysql/data) 目录。
 
 若不慎删了 [data](db/mysql/data) 目录，需要执行 `docker-compose up -d` 重新拉取并运行测试库。
+
+> 初次启动需要等待 1 分钟左右让数据库跑起来，不然无法连接数据库会报错
 
 
