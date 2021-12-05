@@ -17,12 +17,13 @@ class SqliteDBC :
     Sqlite 数据库连接器
     """
 
-    def __init__(self, dbpath='test.db') :
+    def __init__(self, dbpath='test.db', options={}) :
         """
         构造函数
         :param dbname : 数据库路径
+        :param options : 上述所有数据库参数的字典，方便传参
         """
-        self.dbpath = dbpath or 'test.db'
+        self.dbpath = options.get('dbpath') or dbpath or 'test.db'
         self._conn = None
 
 
