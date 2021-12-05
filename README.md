@@ -1,4 +1,4 @@
-# pypdm
+# pypdm-db
 
 > mysql/sqlite 的 PDM 生成器
 
