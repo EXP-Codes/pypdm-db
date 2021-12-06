@@ -70,7 +70,7 @@ setup(
     #
     # This field corresponds to the "Home-Page" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#home-page-optional
-    url='https://github.com/lyy289065406/pypdm',  # Optional
+    url='https://github.com/lyy289065406/pypdm-db',  # Optional
 
     # This should be your name or the name of the organization which owns the
     # project.
@@ -177,11 +177,11 @@ setup(
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # `pip` to create the appropriate form of executable for the target
     #
-    # For example, the following would provide a command called `pypdm` which
+    # For example, the following would provide a command called `pypdm-db` which
     # executes the function `main` from this package when invoked:
     entry_points={  # Optional
         'console_scripts': [
-            'pypdm=builder:build',
+            'pypdm-db=builder:build',
         ],
     },
 
@@ -195,9 +195,9 @@ setup(
     # maintainers, and where to support the project financially. The key is
     # what's used to render the link text on PyPI.
     project_urls={  # Optional
-        'Bug Reports': 'https://github.com/lyy289065406/pypdm/issues',
-        'Funding': 'https://github.com/lyy289065406/pypdm/blob/master/imgs/donate-alipay.png',
-        'Say Thanks!': 'https://github.com/lyy289065406/pypdm/blob/master/imgs/donate-wechat.png',
-        'Source': 'https://github.com/lyy289065406/pypdm/',
+        'Bug Reports': 'https://github.com/lyy289065406/pypdm-db/issues',
+        'Funding': 'https://github.com/lyy289065406/pypdm-db/blob/master/imgs/donate-alipay.png',
+        'Say Thanks!': 'https://github.com/lyy289065406/pypdm-db/blob/master/imgs/donate-wechat.png',
+        'Source': 'https://github.com/lyy289065406/pypdm-db/',
     },
 )
