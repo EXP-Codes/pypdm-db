@@ -83,7 +83,8 @@ twine upload dist/*
 
 发布到 [PyPI](https://pypi.org/) 的项目名称必须是全局唯一的，即若其他用户已使用该项目名称，则无法发布（报错：`The user 'xxx' isn't allowed to upload to project 'yyy'.`）。此时只能修改 [`setup.py`](setup.py) 下的项目名称 `name`。
 
-> 本项目已集成了 Github Workflows，每次推送更新到 master 即可自动打包
+
+> 本项目已集成了 Github Workflows，每次推送更新到 master 即可自动打包并发布到 PyPI
 
 
 ### 关于测试
