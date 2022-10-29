@@ -8,7 +8,7 @@ import re
 import string
 from .assist.cfg import *
 from .assist.num import *
-from .assist import log
+from color_log.clog import log
 
 
 class PDM :
