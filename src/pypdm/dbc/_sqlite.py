@@ -7,8 +7,8 @@
 # -----------------------------------------------
 
 import sqlite3
+from color_log.clog import log
 from ..assist.cfg import *
-from ..assist import log
 
 
 class SqliteDBC :

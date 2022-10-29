@@ -6,9 +6,9 @@
 # Mysql 数据库连接器
 # -------------------------------
 
+from color_log.clog import log
 import pymysql as pdbc
 from ..assist.cfg import *
-from ..assist import log
 
 
 class MysqlDBC :
