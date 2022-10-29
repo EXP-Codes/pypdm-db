@@ -5,8 +5,8 @@
 # -------------------------------
 
 
-from ..assist import log
 from ..assist.cfg import *
+from color_log.clog import log
 
 
 class BaseDao:
