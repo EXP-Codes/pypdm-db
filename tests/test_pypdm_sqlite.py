@@ -8,7 +8,6 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 # ----------------------------------------------------------------------
 
-import shutil
 import unittest
 from src.pypdm.assist.cfg import *
 from src.pypdm.dbc._sqlite import SqliteDBC

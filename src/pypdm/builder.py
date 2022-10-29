@@ -49,7 +49,7 @@ def build(
         pdm_pkg = 'src.pdm',
         table_whitelist = [],
         table_blacklist = [],
-        to_log = False
+        to_log = True
     ) :
     '''
     构造指定数据库的 PDM 对象文件
@@ -57,12 +57,9 @@ def build(
     :param pdm_pkg: 期望生成 PDM 文件的包路径
     :param table_whitelist: 要生成哪些表的 PDM 文件（默认所有表）
     :param table_blacklist: 不生成哪些表的 PDM 文件
-    :param to_log: 是否启用内部日志
+    :param to_log: 是否启用内部日志（此参数在 1.1.3 之后已失效）
     :return:
     '''
-    if to_log :
-        log.init()
-
     paths = []
     if dbc :
         log.info('正在构造数据表 PDM ...')
