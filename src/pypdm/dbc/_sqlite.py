@@ -23,7 +23,15 @@ class SqliteDBC :
         :param options : 上述所有数据库参数的字典，方便传参
         """
         self.dbpath = options.get('dbpath') or dbpath or 'test.db'
+        self.check_same_thread = self._get_bool(options, 'check_same_thread', False)
         self._conn = None
+
+
+    def _get_bool(self, options, key, default) :
+        value = options.get(key)
+        if not isinstance(value, bool) :
+            value = default
+        return value
 
 
     def dbtype(self) :
@@ -41,7 +49,10 @@ class SqliteDBC :
         """
         if not self._conn :
             try :
-                self._conn = sqlite3.connect(database=self.dbpath)
+                self._conn = sqlite3.connect(
+                    database = self.dbpath, 
+                    check_same_thread = self.check_same_thread
+                )
                 self._conn.text_factory = str
             except :
                 log.error("连接数据库 [%s] 失败" % self.dbpath)
