@@ -86,7 +86,7 @@ class PDM :
         placeholders = {
             '{table_name}': table_name,
             '{TableName}': self._to_camel(table_name),
-            '{columns}': '\n'.join(list(map((lambda col: '\t%s = "%s"' % (col, col)), columns))),
+            '{columns}': '\n'.join(list(map((lambda col: '\t%s = "%s"' % (self._to_colname(col), col)), columns))),
             '{variables}': '\n'.join(list(map((lambda col: '\t\tself.%s = None' % col), variables))),
             '{params}': '\n'.join(list(('\t\t\tself.%s,' % col) for col in variables[1:])),
             '{kvs}': '\n'.join(list(map(self._to_kv, columns)))
@@ -102,12 +102,18 @@ class PDM :
         return camel
 
 
+    # 列变量添加前缀 c_， 避免与类型变量重名
+    def _to_colname(self, col) :
+        return f'c_{col}'
+
+
+    # 去掉表名前的类型定义（现在已过时）
     def _to_var(self, col) :
         return re.sub(r'^[a-zA-Z]_', '', col)
 
 
     def _to_kv(self, col) :
-        return '\t\t\t\t"\t%s = %s" % (self.' + col + ', self.' + self._to_var(col) + '),'
+        return '\t\t\t\t"\t%s = %s" % (self.' + self._to_colname(col) + ', self.' + self._to_var(col) + '),'
 
 
     def _to_daos(self, table_name, columns) :

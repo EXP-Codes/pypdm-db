@@ -59,8 +59,8 @@ DAO_TPL = '''#!/usr/bin/env python
 # DAO: @{table_name}
 # -------------------------------
 
-from ..bean.@{table_name} import @{TableName}
 from pypdm.dao._base import BaseDao
+from bean.@{table_name} import @{TableName}
 
 
 class @{TableName}Dao(BaseDao) :

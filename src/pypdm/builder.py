@@ -57,7 +57,7 @@ def build(
     :param pdm_pkg: 期望生成 PDM 文件的包路径
     :param table_whitelist: 要生成哪些表的 PDM 文件（默认所有表）
     :param table_blacklist: 不生成哪些表的 PDM 文件
-    :param to_log: 是否启用内部日志（此参数在 1.1.3 之后已失效）
+    :param to_log: 是否启用内部日志（此参数在 1.1.3 之后已失效，强制使用）
     :return:
     '''
     paths = []
