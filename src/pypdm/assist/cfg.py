@@ -59,6 +59,7 @@ DAO_TPL = '''#!/usr/bin/env python
 # DAO: @{table_name}
 # -------------------------------
 
+from pypdm.assist.cfg import MYSQL
 from pypdm.dao._base import BaseDao
 from bean.@{table_name} import @{TableName}
 
@@ -72,8 +73,8 @@ class @{TableName}Dao(BaseDao) :
     SQL_UPDATE = '@{update}'
     SQL_SELECT = '@{select}'
 
-    def __init__(self) :
-        BaseDao.__init__(self)
+    def __init__(self, dbtype=MYSQL) :
+        BaseDao.__init__(self, dbtype)
 
     def _to_bean(self, row) :
         bean = None

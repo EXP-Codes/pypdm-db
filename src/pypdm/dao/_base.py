@@ -9,7 +9,7 @@ from ..assist.cfg import *
 from color_log.clog import log
 
 
-class BaseDao:
+class BaseDao :
     """
     Dao 基类
     """
@@ -24,8 +24,8 @@ class BaseDao:
     SQL_SELECT = ""
     CHARSET = "utf8"
 
-    def __init__(self):
-        pass
+    def __init__(self, dbtype=MYSQL):
+        self.dbtype = dbtype
 
 
     def count(self, conn):
@@ -54,7 +54,7 @@ class BaseDao:
         is_ok = False
         try:
             cursor = conn.cursor()
-            cursor.execute(self.SQL_TRUNCATE if conn.dbtype() == MYSQL else self.SQL_DELETE)
+            cursor.execute(self.SQL_TRUNCATE if self.dbtype == MYSQL else self.SQL_DELETE)
             conn.commit()
             cursor.close()
             is_ok = True
@@ -117,7 +117,7 @@ class BaseDao:
         is_ok = False
         try:
             cursor = conn.cursor()
-            sql = self._append(conn.dbtype(), self.SQL_DELETE, wheres.keys())
+            sql = self._append(self.SQL_DELETE, wheres.keys())
             cursor.execute(sql, list(wheres.values()))
             conn.commit()
             cursor.close()
@@ -137,7 +137,7 @@ class BaseDao:
         is_ok = False
         try:
             cursor = conn.cursor()
-            sql = self._append(conn.dbtype(), self.SQL_UPDATE, [bean.i_id + ' = '])
+            sql = self._append(self.SQL_UPDATE, [bean.i_id + ' = '])
             params = bean.params() + (bean.id,)
             cursor.execute(sql, params)
             conn.commit()
@@ -167,7 +167,7 @@ class BaseDao:
         beans = []
         try:
             cursor = conn.cursor()
-            sql = self._append(conn.dbtype(), self.SQL_SELECT, wheres.keys())
+            sql = self._append(self.SQL_SELECT, wheres.keys())
             cursor.execute(sql, list(wheres.values()))
             rows = cursor.fetchall()
             for row in rows:
@@ -189,7 +189,7 @@ class BaseDao:
         bean = None
         try:
             cursor = conn.cursor()
-            sql = self._append(conn.dbtype(), self.SQL_SELECT, wheres.keys())
+            sql = self._append(self.SQL_SELECT, wheres.keys())
             cursor.execute(sql, list(wheres.values()))
             row = cursor.fetchone()
             bean = self._to_bean(row)
@@ -200,15 +200,14 @@ class BaseDao:
         return bean
 
 
-    def _append(self, dbtype, sql, keys):
+    def _append(self, sql, keys):
         """
         追加 where 条件到 sql, 条件之间只为 and 关系（目的只是支持简单的数据库操作）
-        :param dbtype: 数据库类型
         :param sql: SQL 语句
         :param keys: 条件键值集合, 要求键值包含操作符，如： [ 'column1 like'， 'column2 =' ]
         :return: 追加 where 条件后的 sql
         """
-        placeholder = '%s' if dbtype == MYSQL else '?'
+        placeholder = '%s' if self.dbtype == MYSQL else '?'
         _sql = sql
         if keys:
             for key in keys:
